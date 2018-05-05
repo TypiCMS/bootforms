@@ -41,8 +41,8 @@ class HorizontalFormBuilder extends BasicFormBuilder
         $formGroup = new HorizontalFormGroup($label, $control, $this->getControlSizes());
 
         if ($this->builder->hasError($name)) {
-            $formGroup->helpBlock($this->builder->getError($name));
-            $formGroup->addClass('has-error');
+            $formGroup->invalidFeedback($this->builder->getError($name));
+            $control->addClass('is-invalid');
         }
 
         return $this->wrap($formGroup);
@@ -93,8 +93,8 @@ class HorizontalFormBuilder extends BasicFormBuilder
         $checkGroup = new CheckGroup($label);
 
         if ($this->builder->hasError($name)) {
-            $checkGroup->helpBlock($this->builder->getError($name));
-            $checkGroup->addClass('has-error');
+            $checkGroup->invalidFeedback($this->builder->getError($name));
+            $control->addClass('is-invalid');
         }
 
         return $checkGroup;
@@ -125,8 +125,8 @@ class HorizontalFormBuilder extends BasicFormBuilder
         $formGroup = new HorizontalFormGroup($label, $control, $this->getControlSizes());
 
         if ($this->builder->hasError($name)) {
-            $formGroup->helpBlock($this->builder->getError($name));
-            $formGroup->addClass('has-error');
+            $formGroup->invalidFeedback($this->builder->getError($name));
+            $control->addClass('is-invalid');
         }
 
         return $formGroup;

@@ -18,14 +18,14 @@ class BasicFormBuilder
 
     protected function formGroup($label, $name, $control)
     {
-        $label = $this->builder->label($label)->addClass('control-label')->forId($name);
+        $label = $this->builder->label($label)->forId($name);
         $control->id($name)->addClass('form-control');
 
         $formGroup = new FormGroup($label, $control);
 
         if ($this->builder->hasError($name)) {
-            $formGroup->helpBlock($this->builder->getError($name));
-            $formGroup->addClass('has-error');
+            $formGroup->invalidFeedback($this->builder->getError($name));
+            $control->addClass('is-invalid');
         }
 
         return $this->wrap($formGroup);
@@ -93,8 +93,8 @@ class BasicFormBuilder
         $checkGroup = new CheckGroup($label, $control);
 
         if ($this->builder->hasError($name)) {
-            $checkGroup->helpBlock($this->builder->getError($name));
-            $checkGroup->addClass('has-error');
+            $checkGroup->invalidFeedback($this->builder->getError($name));
+            $control->addClass('is-invalid');
         }
         return $checkGroup;
     }
@@ -158,8 +158,8 @@ class BasicFormBuilder
         $formGroup = new FormGroup($label, $control);
 
         if ($this->builder->hasError($name)) {
-            $formGroup->helpBlock($this->builder->getError($name));
-            $formGroup->addClass('has-error');
+            $formGroup->invalidFeedback($this->builder->getError($name));
+            $control->addClass('is-invalid');
         }
 
         return $this->wrap($formGroup);
