@@ -82,7 +82,7 @@ class BasicFormBuilder
     protected function checkGroup($label, $name, $control)
     {
         $checkGroup = $this->buildCheckGroup($label, $name, $control);
-        return $this->wrap($checkGroup->addClass('form-group form-check'));
+        return $this->wrap($checkGroup->addClass('form-check'));
     }
 
     protected function buildCheckGroup($label, $name, $control)
