@@ -118,7 +118,7 @@ class BasicFormBuilder
     protected function radioGroup($label, $name, $control)
     {
         $checkGroup = $this->buildCheckGroup($label, $name, $control);
-        return $this->wrap($checkGroup->addClass('radio'));
+        return $this->wrap($checkGroup->addClass('form-check'));
     }
 
     public function textarea($label, $name)

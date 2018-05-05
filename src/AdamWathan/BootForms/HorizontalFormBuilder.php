@@ -107,7 +107,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
         }
 
         $control = $this->builder->radio($name, $value);
-        $checkGroup = $this->checkGroup($label, $name, $control)->addClass('radio');
+        $checkGroup = $this->checkGroup($label, $name, $control)->addClass('form-check');
 
         return new OffsetFormGroup($this->wrap($checkGroup), $this->columnSizes);
     }
