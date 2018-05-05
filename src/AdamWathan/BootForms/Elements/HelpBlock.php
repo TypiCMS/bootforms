@@ -14,11 +14,11 @@ class HelpBlock extends Element
 
     public function render()
     {
-        $html = '<p';
+        $html = '<small';
         $html .= $this->renderAttributes();
         $html .= '>';
         $html .= $this->message;
-        $html .= '</p>';
+        $html .= '</small>';
 
         return $html;
     }
