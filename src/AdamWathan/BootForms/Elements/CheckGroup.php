@@ -1,15 +1,18 @@
 <?php namespace AdamWathan\BootForms\Elements;
 
+use AdamWathan\Form\Elements\Element;
 use AdamWathan\Form\Elements\Label;
 
 class CheckGroup extends FormGroup
 {
     protected $label;
+    protected $control;
     protected $inline = false;
 
-    public function __construct(Label $label)
+    public function __construct(Label $label, Element $control)
     {
         $this->label = $label;
+        $this->control = $control;
     }
 
     public function render()
@@ -21,6 +24,7 @@ class CheckGroup extends FormGroup
         $html = '<div';
         $html .= $this->renderAttributes();
         $html .= '>';
+        $html .= $this->control;
         $html .= $this->label;
         $html .= $this->renderHelpBlock();
 
