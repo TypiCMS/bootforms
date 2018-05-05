@@ -9,7 +9,7 @@ class HelpBlock extends Element
     public function __construct($message)
     {
         $this->message = $message;
-        $this->addClass('help-block');
+        $this->addClass('form-text');
     }
 
     public function render()

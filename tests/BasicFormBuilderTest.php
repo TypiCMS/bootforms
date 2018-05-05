@@ -41,7 +41,7 @@ class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group has-error"><label class="control-label" for="email">Email</label><input type="text" name="email" id="email" class="form-control"><p class="help-block">Email is required.</p></div>';
+        $expected = '<div class="form-group has-error"><label class="control-label" for="email">Email</label><input type="text" name="email" id="email" class="form-control"><p class="form-text">Email is required.</p></div>';
         $result = $this->form->text('Email', 'email')->render();
         $this->assertEquals($expected, $result);
     }
@@ -54,7 +54,7 @@ class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group has-error"><label class="control-label" for="email">Email</label><input type="text" name="email" id="email" class="form-control"><p class="help-block">Email is required.</p></div>';
+        $expected = '<div class="form-group has-error"><label class="control-label" for="email">Email</label><input type="text" name="email" id="email" class="form-control"><p class="form-text">Email is required.</p></div>';
         $result = $this->form->text('Email', 'email')->helpBlock('some custom text')->render();
         $this->assertEquals($expected, $result);
     }
@@ -106,7 +106,7 @@ class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group has-error"><label class="control-label" for="email">Email</label><input type="text" name="email" value="example@example.com" id="email" class="form-control"><p class="help-block">Email is required.</p></div>';
+        $expected = '<div class="form-group has-error"><label class="control-label" for="email">Email</label><input type="text" name="email" value="example@example.com" id="email" class="form-control"><p class="form-text">Email is required.</p></div>';
         $result = $this->form->text('Email', 'email')->render();
         $this->assertEquals($expected, $result);
     }
@@ -139,7 +139,7 @@ class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group has-error"><label class="control-label" for="password">Password</label><input type="password" name="password" id="password" class="form-control"><p class="help-block">Password is required.</p></div>';
+        $expected = '<div class="form-group has-error"><label class="control-label" for="password">Password</label><input type="password" name="password" id="password" class="form-control"><p class="form-text">Password is required.</p></div>';
         $result = $this->form->password('Password', 'password')->render();
         $this->assertEquals($expected, $result);
     }
@@ -204,7 +204,7 @@ class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group has-error"><label class="control-label" for="color">Favorite Color</label><select name="color" id="color" class="form-control"><option value="1">Red</option><option value="2">Green</option><option value="3">Blue</option></select><p class="help-block">Color is required.</p></div>';
+        $expected = '<div class="form-group has-error"><label class="control-label" for="color">Favorite Color</label><select name="color" id="color" class="form-control"><option value="1">Red</option><option value="2">Green</option><option value="3">Blue</option></select><p class="form-text">Color is required.</p></div>';
 
         $options = ['1' => 'Red', '2' => 'Green', '3' => 'Blue'];
         $result = $this->form->select('Favorite Color', 'color', $options)->render();
@@ -241,7 +241,7 @@ class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="has-error checkbox"><label class="control-label"><input type="checkbox" name="terms" value="1">Agree to Terms</label><p class="help-block">Must agree to terms.</p></div>';
+        $expected = '<div class="has-error checkbox"><label class="control-label"><input type="checkbox" name="terms" value="1">Agree to Terms</label><p class="form-text">Must agree to terms.</p></div>';
         $result = $this->form->checkbox('Agree to Terms', 'terms')->render();
         $this->assertEquals($expected, $result);
     }
@@ -280,7 +280,7 @@ class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
         $errorStore->shouldReceive('getError')->andReturn('Sample error');
 
         $this->builder->setErrorStore($errorStore);
-        $expected = '<div class="has-error radio"><label class="control-label"><input type="radio" name="color" value="red">Red</label><p class="help-block">Sample error</p></div>';
+        $expected = '<div class="has-error radio"><label class="control-label"><input type="radio" name="color" value="red">Red</label><p class="form-text">Sample error</p></div>';
         $result = $this->form->radio('Red', 'color', 'red')->render();
         $this->assertEquals($expected, $result);
     }
@@ -338,7 +338,7 @@ class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
         $errorStore->shouldReceive('getError')->andReturn('Sample error');
 
         $this->builder->setErrorStore($errorStore);
-        $expected = '<div class="form-group has-error"><label class="control-label" for="bio">Bio</label><textarea name="bio" rows="10" cols="50" id="bio" class="form-control"></textarea><p class="help-block">Sample error</p></div>';
+        $expected = '<div class="form-group has-error"><label class="control-label" for="bio">Bio</label><textarea name="bio" rows="10" cols="50" id="bio" class="form-control"></textarea><p class="form-text">Sample error</p></div>';
         $result = $this->form->textarea('Bio', 'bio')->render();
         $this->assertEquals($expected, $result);
     }
@@ -491,7 +491,7 @@ class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
         $errorStore->shouldReceive('getError')->andReturn('Sample error');
 
         $this->builder->setErrorStore($errorStore);
-        $expected = '<div class="form-group has-error"><label class="control-label" for="file">File</label><input type="file" name="file" id="file"><p class="help-block">Sample error</p></div>';
+        $expected = '<div class="form-group has-error"><label class="control-label" for="file">File</label><input type="file" name="file" id="file"><p class="form-text">Sample error</p></div>';
         $result = $this->form->file('File', 'file')->render();
         $this->assertEquals($expected, $result);
     }
@@ -640,7 +640,7 @@ class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group has-error"><label class="control-label" for="test">Test</label><div class="input-group"><input type="text" name="test" value="abc" id="test" class="form-control"></div><p class="help-block">Test is required.</p></div>';
+        $expected = '<div class="form-group has-error"><label class="control-label" for="test">Test</label><div class="input-group"><input type="text" name="test" value="abc" id="test" class="form-control"></div><p class="form-text">Test is required.</p></div>';
         $result = $this->form->inputGroup('Test', 'test')->render();
         $this->assertEquals($expected, $result);
     }

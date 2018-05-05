@@ -181,7 +181,7 @@ Essentially, this takes code that would normally look like this:
 <div class="form-group {!! $errors->has('first_name') ? 'has-error' : '' !!}">
   <label for="first_name">First Name</label>
   <input type="text" class="form-control" id="first_name">
-  {!! $errors->first('first_name', '<p class="help-block">:message</p>') !!}
+  {!! $errors->first('first_name', '<p class="form-text">:message</p>') !!}
 </div>
 ```
 
