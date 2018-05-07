@@ -152,8 +152,8 @@ class BasicFormBuilder
     public function file($label, $name, $value = null)
     {
         $control = $this->builder->file($name)->value($value);
-        $label = $this->builder->label($label, $name)->addClass('control-label')->forId($name);
-        $control->id($name);
+        $label = $this->builder->label($label, $name)->forId($name);
+        $control->id($name)->addClass('form-control-file');
 
         $formGroup = new FormGroup($label, $control);
 
