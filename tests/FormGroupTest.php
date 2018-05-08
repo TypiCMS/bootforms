@@ -1,10 +1,10 @@
 <?php
 
 use AdamWathan\BootForms\Elements\FormGroup;
-use AdamWathan\BootForms\Elements\HelpBlock;
 use AdamWathan\Form\FormBuilder;
+use PHPUnit\Framework\TestCase;
 
-class FormGroupTest extends PHPUnit_Framework_TestCase
+class FormGroupTest extends TestCase
 {
     public function setUp()
     {
@@ -77,7 +77,7 @@ class FormGroupTest extends PHPUnit_Framework_TestCase
         $formGroup = new FormGroup($label, $text);
         $formGroup->helpBlock('Email is required.');
 
-        $expected = '<div class="form-group"><label>Email</label><input type="text" name="email"><p class="form-text">Email is required.</p></div>';
+        $expected = '<div class="form-group"><label>Email</label><input type="text" name="email"><small class="form-text">Email is required.</small></div>';
         $result = $formGroup->render();
         $this->assertEquals($expected, $result);
     }
