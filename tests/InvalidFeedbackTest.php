@@ -1,6 +1,6 @@
 <?php
 
-use AdamWathan\BootForms\Elements\InvalidFeedback;
+use TypiCMS\BootForms\Elements\InvalidFeedback;
 use PHPUnit\Framework\TestCase;
 
 class InvalidFeedbackTest extends TestCase

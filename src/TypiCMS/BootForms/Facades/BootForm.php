@@ -1,4 +1,4 @@
-<?php namespace AdamWathan\BootForms\Facades;
+<?php namespace TypiCMS\BootForms\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

@@ -1,10 +1,14 @@
 {
-    "name": "adamwathan/bootforms",
-    "description": "Just a Formbuilder with some Bootstrap specific conveniences. Remembers old input, retrieves error messages and handles all your boilerplate Bootstrap markup automatically.",
+    "name": "typicms/bootforms",
+    "description": "Just a Formbuilder with some Bootstrap 4 specific conveniences. Remembers old input, retrieves error messages and handles all your boilerplate Bootstrap markup automatically.",
     "authors": [
         {
             "name": "Adam Wathan",
             "email": "adam.wathan@gmail.com"
+        },
+        {
+            "name": "Samuel De Backer",
+            "email": "sdebacker@gmail.com"
         }
     ],
     "license": "MIT",
@@ -19,7 +23,7 @@
     },
     "autoload": {
         "psr-0": {
-            "AdamWathan\\BootForms": "src/"
+            "TypiCMS\\BootForms": "src/"
         }
     },
     "minimum-stability": "stable"

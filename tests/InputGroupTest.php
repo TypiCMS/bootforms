@@ -1,6 +1,6 @@
 <?php
 
-use AdamWathan\BootForms\Elements\InputGroup;
+use TypiCMS\BootForms\Elements\InputGroup;
 use PHPUnit\Framework\TestCase;
 
 class InputGroupTest extends TestCase

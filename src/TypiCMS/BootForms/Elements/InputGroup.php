@@ -1,4 +1,4 @@
-<?php namespace AdamWathan\BootForms\Elements;
+<?php namespace TypiCMS\BootForms\Elements;
 
 use AdamWathan\Form\Elements\Text;
 

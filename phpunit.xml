@@ -23,8 +23,8 @@
         <whitelist>
             <directory suffix=".php">./src</directory>
             <exclude>
-                <file>./src/AdamWathan/BootForms/BootFormsServiceProvider.php</file>
-                <file>./src/AdamWathan/BootForms/Facades/BootForm.php</file>
+                <file>./src/TypiCMS/BootForms/BootFormsServiceProvider.php</file>
+                <file>./src/TypiCMS/BootForms/Facades/BootForm.php</file>
             </exclude>
         </whitelist>
     </filter>

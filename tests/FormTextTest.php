@@ -1,6 +1,6 @@
 <?php
 
-use AdamWathan\BootForms\Elements\FormText;
+use TypiCMS\BootForms\Elements\FormText;
 use PHPUnit\Framework\TestCase;
 
 class FormTextTest extends TestCase

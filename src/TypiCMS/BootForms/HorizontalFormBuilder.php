@@ -1,9 +1,9 @@
-<?php namespace AdamWathan\BootForms;
+<?php namespace TypiCMS\BootForms;
 
-use AdamWathan\BootForms\Elements\CheckGroup;
-use AdamWathan\BootForms\Elements\FormText;
-use AdamWathan\BootForms\Elements\HorizontalFormGroup;
-use AdamWathan\BootForms\Elements\OffsetFormGroup;
+use TypiCMS\BootForms\Elements\CheckGroup;
+use TypiCMS\BootForms\Elements\FormText;
+use TypiCMS\BootForms\Elements\HorizontalFormGroup;
+use TypiCMS\BootForms\Elements\OffsetFormGroup;
 use AdamWathan\Form\FormBuilder;
 
 class HorizontalFormBuilder extends BasicFormBuilder

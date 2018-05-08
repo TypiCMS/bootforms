@@ -1,10 +1,10 @@
-<?php namespace AdamWathan\BootForms;
+<?php namespace TypiCMS\BootForms;
 
-use AdamWathan\BootForms\Elements\CheckGroup;
-use AdamWathan\BootForms\Elements\FormGroup;
-use AdamWathan\BootForms\Elements\GroupWrapper;
-use AdamWathan\BootForms\Elements\FormText;
-use AdamWathan\BootForms\Elements\InputGroup;
+use TypiCMS\BootForms\Elements\CheckGroup;
+use TypiCMS\BootForms\Elements\FormGroup;
+use TypiCMS\BootForms\Elements\GroupWrapper;
+use TypiCMS\BootForms\Elements\FormText;
+use TypiCMS\BootForms\Elements\InputGroup;
 use AdamWathan\Form\FormBuilder;
 
 class BasicFormBuilder

@@ -33,7 +33,7 @@ Modify the `providers` array in `config/app.php` to include the `BootFormsServic
 ```php
 'providers' => [
     //...
-    'AdamWathan\BootForms\BootFormsServiceProvider'
+    'TypiCMS\BootForms\BootFormsServiceProvider'
   ],
 ```
 
@@ -42,7 +42,7 @@ Add the `BootForm` facade to the `aliases` array in `config/app.php`:
 ```php
 'aliases' => [
     //...
-    'BootForm' => 'AdamWathan\BootForms\Facades\BootForm'
+    'BootForm' => 'TypiCMS\BootForms\Facades\BootForm'
   ],
 ```
 
@@ -63,10 +63,10 @@ $formBuilder->setOldInputProvider($myOldInputProvider);
 $formBuilder->setErrorStore($myErrorStore);
 $formBuilder->setToken($myCsrfToken);
 
-$basicBootFormsBuilder = new AdamWathan\BootForms\BasicFormBuilder($formBuilder);
-$horizontalBootFormsBuilder = new AdamWathan\BootForms\HorizontalFormBuilder($formBuilder);
+$basicBootFormsBuilder = new TypiCMS\BootForms\BasicFormBuilder($formBuilder);
+$horizontalBootFormsBuilder = new TypiCMS\BootForms\HorizontalFormBuilder($formBuilder);
 
-$bootForm = new AdamWathan\BootForms\BootForm($basicBootFormsBuilder, $horizontalBootFormsBuilder);
+$bootForm = new TypiCMS\BootForms\BootForm($basicBootFormsBuilder, $horizontalBootFormsBuilder);
 ```
 
 > Note: You must provide your own implementations of `AdamWathan\Form\OldInputInterface` and `AdamWathan\Form\ErrorStoreInterface` when not using the implementations meant for Laravel.

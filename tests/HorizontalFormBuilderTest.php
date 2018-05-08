@@ -1,6 +1,6 @@
 <?php
 
-use AdamWathan\BootForms\HorizontalFormBuilder;
+use TypiCMS\BootForms\HorizontalFormBuilder;
 use AdamWathan\Form\FormBuilder;
 use PHPUnit\Framework\TestCase;
 

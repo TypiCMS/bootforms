@@ -1,6 +1,6 @@
 <?php
 
-use AdamWathan\BootForms\BasicFormBuilder;
+use TypiCMS\BootForms\BasicFormBuilder;
 use AdamWathan\Form\FormBuilder;
 use PHPUnit\Framework\TestCase;
 
