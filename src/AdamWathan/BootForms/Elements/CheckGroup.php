@@ -45,12 +45,12 @@ class CheckGroup extends FormGroup
 
     public function control()
     {
-        return $this->label->getControl();
+        return $this->control;
     }
 
     public function __call($method, $parameters)
     {
-        call_user_func_array([$this->label->getControl(), $method], $parameters);
+        call_user_func_array([$this->control, $method], $parameters);
         return $this;
     }
 }
