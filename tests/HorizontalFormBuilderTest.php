@@ -185,7 +185,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderButton()
     {
-        $expected = '<div class="form-group row"><div class="col-lg-offset-2 col-lg-10"><button type="button" class="btn btn-default">Click Me</button></div></div>';
+        $expected = '<div class="form-group row"><div class="col-lg-offset-2 col-lg-10"><button type="button" class="btn btn-secondary">Click Me</button></div></div>';
         $result = $this->form->button('Click Me')->render();
         $this->assertEquals($expected, $result);
     }
@@ -193,7 +193,7 @@ class HorizontalFormBuilderTest extends TestCase
     public function testRenderButtonWithCustomColumnSizes()
     {
         $this->form->setColumnSizes(['lg' => [3, 9]]);
-        $expected = '<div class="form-group row"><div class="col-lg-offset-3 col-lg-9"><button type="button" class="btn btn-default">Click Me</button></div></div>';
+        $expected = '<div class="form-group row"><div class="col-lg-offset-3 col-lg-9"><button type="button" class="btn btn-secondary">Click Me</button></div></div>';
         $result = $this->form->button('Click Me')->render();
         $this->assertEquals($expected, $result);
     }
@@ -201,7 +201,7 @@ class HorizontalFormBuilderTest extends TestCase
     public function testRenderButtonWithMultipleBreakpointSizes()
     {
         $this->form->setColumnSizes(['xs' => [5, 7], 'lg' => [3, 9]]);
-        $expected = '<div class="form-group row"><div class="col-xs-offset-5 col-xs-7 col-lg-offset-3 col-lg-9"><button type="button" class="btn btn-default">Click Me</button></div></div>';
+        $expected = '<div class="form-group row"><div class="col-xs-offset-5 col-xs-7 col-lg-offset-3 col-lg-9"><button type="button" class="btn btn-secondary">Click Me</button></div></div>';
         $result = $this->form->button('Click Me')->render();
         $this->assertEquals($expected, $result);
     }
@@ -209,14 +209,14 @@ class HorizontalFormBuilderTest extends TestCase
     public function testRenderButtonWithMultipleBreakpointSizesThatDontFillFullWidth()
     {
         $this->form->setColumnSizes(['xs' => [5, 7], 'lg' => [3, 6]]);
-        $expected = '<div class="form-group row"><div class="col-xs-offset-5 col-xs-7 col-lg-offset-3 col-lg-6"><button type="button" class="btn btn-default">Click Me</button></div></div>';
+        $expected = '<div class="form-group row"><div class="col-xs-offset-5 col-xs-7 col-lg-offset-3 col-lg-6"><button type="button" class="btn btn-secondary">Click Me</button></div></div>';
         $result = $this->form->button('Click Me')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderSubmit()
     {
-        $expected = '<div class="form-group row"><div class="col-lg-offset-2 col-lg-10"><button type="submit" class="btn btn-default">Submit</button></div></div>';
+        $expected = '<div class="form-group row"><div class="col-lg-offset-2 col-lg-10"><button type="submit" class="btn btn-primary">Submit</button></div></div>';
         $result = $this->form->submit()->render();
         $this->assertEquals($expected, $result);
     }

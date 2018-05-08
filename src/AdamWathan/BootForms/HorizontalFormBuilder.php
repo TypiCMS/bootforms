@@ -66,13 +66,13 @@ class HorizontalFormBuilder extends BasicFormBuilder
         return trim($class);
     }
 
-    public function button($value, $name = null, $type = "btn-default")
+    public function button($value, $name = null, $type = "btn-secondary")
     {
         $button = $this->builder->button($value, $name)->addClass('btn')->addClass($type);
         return new OffsetFormGroup($button, $this->columnSizes);
     }
 
-    public function submit($value = "Submit", $type = "btn-default")
+    public function submit($value = "Submit", $type = "btn-primary")
     {
         $button = $this->builder->submit($value)->addClass('btn')->addClass($type);
         return new OffsetFormGroup($button, $this->columnSizes);
