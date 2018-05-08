@@ -1,11 +1,8 @@
-> **Important: This package is not actively maintained.** For bug fixes and new features, please fork.
-
 BootForms
 ===============
 
-[![This Project Has Been Deprecated.](http://www.repostatus.org/badges/0.1.0/abandoned.svg)](http://www.repostatus.org/#abandoned)
-[![Code Climate](https://codeclimate.com/github/adamwathan/bootforms/badges/gpa.svg)](https://codeclimate.com/github/adamwathan/bootforms)
-[![Coverage Status](https://coveralls.io/repos/adamwathan/bootforms/badge.svg?branch=master)](https://coveralls.io/r/adamwathan/bootforms?branch=master)
+[![Code Climate](https://codeclimate.com/github/TypiCMS/bootforms/badges/gpa.svg)](https://codeclimate.com/github/TypiCMS/bootforms)
+[![Coverage Status](https://coveralls.io/repos/TypiCMS/bootforms/badge.svg?branch=master)](https://coveralls.io/r/TypiCMS/bootforms?branch=master)
 
 BootForms builds on top of my more general [Form](https://github.com/adamwathan/form) package by adding another layer of abstraction to rapidly generate markup for standard Bootstrap 3 forms. Probably not perfect for your super custom branded ready-for-release apps, but a *huge* time saver when you are still in the prototyping stage!
 
@@ -222,7 +219,9 @@ $columnSizes = [
 
 You can hide labels by chaining the `hideLabel()` helper off of any element definition.
 
-`BootForm::text('First Name', 'first_name')->hideLabel()`
+```php
+BootForm::text('First Name', 'first_name')->hideLabel()
+```
 
 The label will still be generated in the markup, but hidden using Bootstrap's `.sr-only` class, so you don't reduce the accessibility of your form.
 
@@ -230,7 +229,9 @@ The label will still be generated in the markup, but hidden using Bootstrap's `.
 
 You can add a help block underneath a form element using the `helpBlock()` helper.
 
-`BootForm::text('Password', 'password')->helpBlock('A strong password should be long and hard to guess.')`
+```php
+BootForm::text('Password', 'password')->helpBlock('A strong password should be long and hard to guess.')
+```
 
 > Note: This help block will automatically be overridden by errors if there are validation errors.
 
