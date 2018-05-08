@@ -90,7 +90,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
     {
         $label = $this->builder->label($label, $name)->after($control);
 
-        $checkGroup = new CheckGroup($label);
+        $checkGroup = new CheckGroup($label, $control);
 
         if ($this->builder->hasError($name)) {
             $checkGroup->invalidFeedback($this->builder->getError($name));
