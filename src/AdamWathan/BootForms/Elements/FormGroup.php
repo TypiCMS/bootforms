@@ -26,7 +26,6 @@ class FormGroup extends Element
         $html .= $this->control;
         $html .= $this->renderInvalidFeedback();
         $html .= $this->renderHelpBlock();
-
         $html .= '</div>';
 
         return $html;
