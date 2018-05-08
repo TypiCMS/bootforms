@@ -13,6 +13,7 @@ class CheckGroup extends FormGroup
     {
         $this->label = $label;
         $this->control = $control;
+        $this->addClass('form-check');
     }
 
     public function render()

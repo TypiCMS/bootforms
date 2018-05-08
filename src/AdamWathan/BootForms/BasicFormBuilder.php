@@ -82,7 +82,7 @@ class BasicFormBuilder
     protected function checkGroup($label, $name, $control)
     {
         $checkGroup = $this->buildCheckGroup($label, $name, $control);
-        return $this->wrap($checkGroup->addClass('form-check'));
+        return $this->wrap($checkGroup);
     }
 
     protected function buildCheckGroup($label, $name, $control)
@@ -118,7 +118,7 @@ class BasicFormBuilder
     protected function radioGroup($label, $name, $control)
     {
         $checkGroup = $this->buildCheckGroup($label, $name, $control);
-        return $this->wrap($checkGroup->addClass('form-check'));
+        return $this->wrap($checkGroup);
     }
 
     public function textarea($label, $name)
