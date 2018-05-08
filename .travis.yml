@@ -6,4 +6,5 @@ php:
 
 install: composer install --dev
 
-after_script: php vendor/bin/coveralls
+after_success:
+  - travis_retry php vendor/bin/php-coveralls
