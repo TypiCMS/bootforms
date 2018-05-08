@@ -13,7 +13,7 @@ class OffsetFormGroup
 
     public function render()
     {
-        $html = '<div class="form-group">';
+        $html = '<div class="form-group row">';
         $html .= '<div class="' . $this->getControlClass() . '">';
         $html .= $this->control;
         $html .= '</div>';

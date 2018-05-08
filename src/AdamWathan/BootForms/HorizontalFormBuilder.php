@@ -26,14 +26,14 @@ class HorizontalFormBuilder extends BasicFormBuilder
 
     public function open()
     {
-        return $this->builder->open()->addClass('form-horizontal');
+        return $this->builder->open();
     }
 
     protected function formGroup($label, $name, $control)
     {
         $label = $this->builder->label($label, $name)
             ->addClass($this->getLabelClass())
-            ->addClass('control-label')
+            ->addClass('col-form-label')
             ->forId($name);
 
         $control->id($name)->addClass('form-control');
@@ -81,14 +81,15 @@ class HorizontalFormBuilder extends BasicFormBuilder
     public function checkbox($label, $name)
     {
         $control = $this->builder->checkbox($name);
-        $checkGroup = $this->checkGroup($label, $name, $control)->addClass('checkbox');
+        $checkGroup = $this->checkGroup($label, $name, $control);
 
         return new OffsetFormGroup($this->wrap($checkGroup), $this->columnSizes);
     }
 
     protected function checkGroup($label, $name, $control)
     {
-        $label = $this->builder->label($label, $name)->after($control);
+        $label = $this->builder->label($label, $name)->addClass('form-check-label')->forId($name);
+        $control->id($name)->addClass('form-check-input');
 
         $checkGroup = new CheckGroup($label, $control);
 
@@ -107,7 +108,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
         }
 
         $control = $this->builder->radio($name, $value);
-        $checkGroup = $this->checkGroup($label, $name, $control)->addClass('form-check');
+        $checkGroup = $this->checkGroup($label, $name, $control);
 
         return new OffsetFormGroup($this->wrap($checkGroup), $this->columnSizes);
     }
@@ -117,7 +118,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
         $control = $this->builder->file($name)->value($value);
         $label = $this->builder->label($label, $name)
             ->addClass($this->getLabelClass())
-            ->addClass('control-label')
+            ->addClass('col-form-label')
             ->forId($name);
 
         $control->id($name);

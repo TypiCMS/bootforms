@@ -11,6 +11,7 @@ class HorizontalFormGroup extends FormGroup
     {
         parent::__construct($label, $control);
         $this->controlSizes = $controlSizes;
+        $this->addClass('row');
     }
 
     public function render()
@@ -21,6 +22,7 @@ class HorizontalFormGroup extends FormGroup
         $html .= $this->label;
         $html .= '<div class="' . $this->getControlClass() . '">';
         $html .= $this->control;
+        $html .= $this->renderInvalidFeedback();
         $html .= $this->renderHelpBlock();
         $html .= '</div>';
 
