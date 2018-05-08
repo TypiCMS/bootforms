@@ -2,7 +2,7 @@
 
 use AdamWathan\Form\Elements\Element;
 
-class HelpBlock extends Element
+class FormText extends Element
 {
     private $message;
 

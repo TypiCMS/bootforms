@@ -1,7 +1,7 @@
 <?php namespace AdamWathan\BootForms;
 
 use AdamWathan\BootForms\Elements\CheckGroup;
-use AdamWathan\BootForms\Elements\HelpBlock;
+use AdamWathan\BootForms\Elements\FormText;
 use AdamWathan\BootForms\Elements\HorizontalFormGroup;
 use AdamWathan\BootForms\Elements\OffsetFormGroup;
 use AdamWathan\Form\FormBuilder;

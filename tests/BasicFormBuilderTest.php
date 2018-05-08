@@ -47,7 +47,7 @@ class BasicFormBuilderTest extends TestCase
         $this->assertEquals($expected, $result);
     }
 
-    public function testRenderTextGroupWithErrorAndCustomHelpBlock()
+    public function testRenderTextGroupWithErrorAndCustomFormText()
     {
         $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
@@ -56,7 +56,7 @@ class BasicFormBuilderTest extends TestCase
         $this->builder->setErrorStore($errorStore);
 
         $expected = '<div class="form-group"><label for="email">Email</label><input type="text" name="email" id="email" class="form-control is-invalid"><div class="invalid-feedback">Email is required.</div><small class="form-text">some custom text</small></div>';
-        $result = $this->form->text('Email', 'email')->helpBlock('some custom text')->render();
+        $result = $this->form->text('Email', 'email')->formText('some custom text')->render();
         $this->assertEquals($expected, $result);
     }
 
@@ -147,7 +147,7 @@ class BasicFormBuilderTest extends TestCase
 
     public function testRenderButton()
     {
-        $expected = '<button type="button" class="btn btn-default">Click Me</button>';
+        $expected = '<button type="button" class="btn btn-secondary">Click Me</button>';
         $result = $this->form->button('Click Me')->render();
         $this->assertEquals($expected, $result);
     }
@@ -161,7 +161,7 @@ class BasicFormBuilderTest extends TestCase
 
     public function testRenderSubmit()
     {
-        $expected = '<button type="submit" class="btn btn-default">Submit</button>';
+        $expected = '<button type="submit" class="btn btn-primary">Submit</button>';
         $result = $this->form->submit()->render();
         $this->assertEquals($expected, $result);
     }

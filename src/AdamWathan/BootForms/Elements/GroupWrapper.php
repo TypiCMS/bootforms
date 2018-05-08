@@ -18,9 +18,9 @@ class GroupWrapper
         return $this->formGroup->render();
     }
 
-    public function helpBlock($text)
+    public function formText($text)
     {
-        $this->formGroup->helpBlock($text);
+        $this->formGroup->formText($text);
         return $this;
     }
 
@@ -58,7 +58,7 @@ class GroupWrapper
         $this->labelClass('sr-only');
         return $this;
     }
-    
+
     public function required($conditional = true)
     {
         if ($conditional) {

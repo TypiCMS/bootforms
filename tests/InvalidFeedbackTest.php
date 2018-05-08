@@ -11,16 +11,16 @@ class InvalidFeedbackTest extends TestCase
 
     public function testCanRenderBasicInvalidFeedback()
     {
-        $helpBlock = new InvalidFeedback('Email is required.');
+        $formText = new InvalidFeedback('Email is required.');
 
         $expected = '<div class="invalid-feedback">Email is required.</div>';
-        $result = $helpBlock->render();
+        $result = $formText->render();
         $this->assertEquals($expected, $result);
 
-        $helpBlock = new InvalidFeedback('First name is required.');
+        $formText = new InvalidFeedback('First name is required.');
 
         $expected = '<div class="invalid-feedback">First name is required.</div>';
-        $result = $helpBlock->render();
+        $result = $formText->render();
         $this->assertEquals($expected, $result);
     }
 }

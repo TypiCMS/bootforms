@@ -70,12 +70,12 @@ class FormGroupTest extends TestCase
         $this->assertEquals($expected, $result);
     }
 
-    public function testCanRenderWithHelpBlock()
+    public function testCanRenderWithFormText()
     {
         $label = $this->builder->label('Email');
         $text = $this->builder->text('email');
         $formGroup = new FormGroup($label, $text);
-        $formGroup->helpBlock('Email is required.');
+        $formGroup->formText('Email is required.');
 
         $expected = '<div class="form-group"><label>Email</label><input type="text" name="email"><small class="form-text">Email is required.</small></div>';
         $result = $formGroup->render();

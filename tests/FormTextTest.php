@@ -1,26 +1,26 @@
 <?php
 
-use AdamWathan\BootForms\Elements\HelpBlock;
+use AdamWathan\BootForms\Elements\FormText;
 use PHPUnit\Framework\TestCase;
 
-class HelpBlockTest extends TestCase
+class FormTextTest extends TestCase
 {
     public function setUp()
     {
     }
 
-    public function testCanRenderBasicHelpBlock()
+    public function testCanRenderBasicFormText()
     {
-        $helpBlock = new HelpBlock('Email is required.');
+        $formText = new FormText('Email is required.');
 
         $expected = '<small class="form-text">Email is required.</small>';
-        $result = $helpBlock->render();
+        $result = $formText->render();
         $this->assertEquals($expected, $result);
 
-        $helpBlock = new HelpBlock('First name is required.');
+        $formText = new FormText('First name is required.');
 
         $expected = '<small class="form-text">First name is required.</small>';
-        $result = $helpBlock->render();
+        $result = $formText->render();
         $this->assertEquals($expected, $result);
     }
 }
