@@ -26,5 +26,12 @@
             "TypiCMS\\BootForms": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TypiCMS\\BootForms\\BootFormsServiceProvider"
+            ]
+        }
+    }
 }
