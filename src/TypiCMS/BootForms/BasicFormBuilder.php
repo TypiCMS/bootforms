@@ -2,11 +2,11 @@
 
 namespace TypiCMS\BootForms;
 
-use TypiCMS\Form\FormBuilder;
 use TypiCMS\BootForms\Elements\CheckGroup;
 use TypiCMS\BootForms\Elements\FormGroup;
 use TypiCMS\BootForms\Elements\GroupWrapper;
 use TypiCMS\BootForms\Elements\InputGroup;
+use TypiCMS\Form\FormBuilder;
 
 class BasicFormBuilder
 {

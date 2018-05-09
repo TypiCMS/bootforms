@@ -2,10 +2,10 @@
 
 namespace TypiCMS\BootForms;
 
+use Illuminate\Support\ServiceProvider;
 use TypiCMS\Form\ErrorStore\IlluminateErrorStore;
 use TypiCMS\Form\FormBuilder;
 use TypiCMS\Form\OldInput\IlluminateOldInputProvider;
-use Illuminate\Support\ServiceProvider;
 
 class BootFormsServiceProvider extends ServiceProvider
 {

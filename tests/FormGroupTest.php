@@ -1,8 +1,8 @@
 <?php
 
-use TypiCMS\Form\FormBuilder;
 use PHPUnit\Framework\TestCase;
 use TypiCMS\BootForms\Elements\FormGroup;
+use TypiCMS\Form\FormBuilder;
 
 class FormGroupTest extends TestCase
 {
