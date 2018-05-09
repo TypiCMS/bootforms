@@ -1,8 +1,8 @@
 <?php
 
-use TypiCMS\BootForms\HorizontalFormBuilder;
 use AdamWathan\Form\FormBuilder;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\BootForms\HorizontalFormBuilder;
 
 class HorizontalFormBuilderTest extends TestCase
 {
@@ -11,7 +11,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function setUp()
     {
-        $this->builder = new FormBuilder;
+        $this->builder = new FormBuilder();
         $this->form = new HorizontalFormBuilder($this->builder);
     }
 

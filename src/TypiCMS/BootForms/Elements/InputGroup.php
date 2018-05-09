@@ -1,4 +1,6 @@
-<?php namespace TypiCMS\BootForms\Elements;
+<?php
+
+namespace TypiCMS\BootForms\Elements;
 
 use AdamWathan\Form\Elements\Text;
 
@@ -25,6 +27,7 @@ class InputGroup extends Text
     public function type($type)
     {
         $this->attributes['type'] = $type;
+
         return $this;
     }
 

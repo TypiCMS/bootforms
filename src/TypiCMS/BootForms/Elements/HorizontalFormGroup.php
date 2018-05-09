@@ -1,4 +1,6 @@
-<?php namespace TypiCMS\BootForms\Elements;
+<?php
+
+namespace TypiCMS\BootForms\Elements;
 
 use AdamWathan\Form\Elements\Element;
 use AdamWathan\Form\Elements\Label;
@@ -20,7 +22,7 @@ class HorizontalFormGroup extends FormGroup
         $html .= $this->renderAttributes();
         $html .= '>';
         $html .= $this->label;
-        $html .= '<div class="' . $this->getControlClass() . '">';
+        $html .= '<div class="'.$this->getControlClass().'">';
         $html .= $this->control;
         $html .= $this->renderInvalidFeedback();
         $html .= $this->renderFormText();
@@ -37,12 +39,14 @@ class HorizontalFormGroup extends FormGroup
         foreach ($this->controlSizes as $breakpoint => $size) {
             $class .= sprintf('col-%s-%s ', $breakpoint, $size);
         }
+
         return trim($class);
     }
 
     public function __call($method, $parameters)
     {
         call_user_func_array([$this->control, $method], $parameters);
+
         return $this;
     }
 }

@@ -1,10 +1,11 @@
-<?php namespace TypiCMS\BootForms;
+<?php
 
+namespace TypiCMS\BootForms;
+
+use AdamWathan\Form\FormBuilder;
 use TypiCMS\BootForms\Elements\CheckGroup;
-use TypiCMS\BootForms\Elements\FormText;
 use TypiCMS\BootForms\Elements\HorizontalFormGroup;
 use TypiCMS\BootForms\Elements\OffsetFormGroup;
-use AdamWathan\Form\FormBuilder;
 
 class HorizontalFormBuilder extends BasicFormBuilder
 {
@@ -21,6 +22,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
     public function setColumnSizes($columnSizes)
     {
         $this->columnSizes = $columnSizes;
+
         return $this;
     }
 
@@ -54,6 +56,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
         foreach ($this->columnSizes as $breakpoint => $sizes) {
             $controlSizes[$breakpoint] = $sizes[1];
         }
+
         return $controlSizes;
     }
 
@@ -63,18 +66,21 @@ class HorizontalFormBuilder extends BasicFormBuilder
         foreach ($this->columnSizes as $breakpoint => $sizes) {
             $class .= sprintf('col-%s-%s ', $breakpoint, $sizes[0]);
         }
+
         return trim($class);
     }
 
-    public function button($value, $name = null, $type = "btn-secondary")
+    public function button($value, $name = null, $type = 'btn-secondary')
     {
         $button = $this->builder->button($value, $name)->addClass('btn')->addClass($type);
+
         return new OffsetFormGroup($button, $this->columnSizes);
     }
 
-    public function submit($value = "Submit", $type = "btn-primary")
+    public function submit($value = 'Submit', $type = 'btn-primary')
     {
         $button = $this->builder->submit($value)->addClass('btn')->addClass($type);
+
         return new OffsetFormGroup($button, $this->columnSizes);
     }
 

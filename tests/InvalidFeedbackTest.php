@@ -1,7 +1,7 @@
 <?php
 
-use TypiCMS\BootForms\Elements\InvalidFeedback;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\BootForms\Elements\InvalidFeedback;
 
 class InvalidFeedbackTest extends TestCase
 {

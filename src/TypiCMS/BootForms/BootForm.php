@@ -1,4 +1,6 @@
-<?php namespace TypiCMS\BootForms;
+<?php
+
+namespace TypiCMS\BootForms;
 
 class BootForm
 {
@@ -15,6 +17,7 @@ class BootForm
     public function open()
     {
         $this->builder = $this->basicFormBuilder;
+
         return $this->builder->open();
     }
 
@@ -22,6 +25,7 @@ class BootForm
     {
         $this->horizontalFormBuilder->setColumnSizes($columnSizes);
         $this->builder = $this->horizontalFormBuilder;
+
         return $this->builder->open();
     }
 
