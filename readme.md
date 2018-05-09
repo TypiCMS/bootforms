@@ -3,6 +3,7 @@ BootForms
 
 [![Build Status](https://travis-ci.org/TypiCMS/bootforms.svg?branch=master)](https://travis-ci.org/TypiCMS/bootforms)
 [![Coverage Status](https://coveralls.io/repos/github/TypiCMS/bootforms/badge.svg?branch=master)](https://coveralls.io/github/TypiCMS/bootforms?branch=master)
+[![StyleCI](https://styleci.io/repos/132662795/shield?branch=master)](https://styleci.io/repos/132662795)
 
 BootForms was originally created by [Adam Wathan](https://github.com/adamwathan). It is build on top of the more general [Form](https://github.com/adamwathan/form) package by adding another layer of abstraction to rapidly generate markup for standard Bootstrap 4 forms. Probably not perfect for your super custom branded ready-for-release apps, but a *huge* time saver when you are still in the prototyping stage!
 
