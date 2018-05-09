@@ -33,24 +33,24 @@ class BootFormsServiceProvider extends ServiceProvider
 
     protected function registerErrorStore()
     {
-        $this->app->singleton('adamwathan.form.errorstore', function ($app) {
+        $this->app->singleton('typicms.form.errorstore', function ($app) {
             return new IlluminateErrorStore($app['session.store']);
         });
     }
 
     protected function registerOldInput()
     {
-        $this->app->singleton('adamwathan.form.oldinput', function ($app) {
+        $this->app->singleton('typicms.form.oldinput', function ($app) {
             return new IlluminateOldInputProvider($app['session.store']);
         });
     }
 
     protected function registerFormBuilder()
     {
-        $this->app->singleton('adamwathan.form', function ($app) {
+        $this->app->singleton('typicms.form', function ($app) {
             $formBuilder = new FormBuilder();
-            $formBuilder->setErrorStore($app['adamwathan.form.errorstore']);
-            $formBuilder->setOldInputProvider($app['adamwathan.form.oldinput']);
+            $formBuilder->setErrorStore($app['typicms.form.errorstore']);
+            $formBuilder->setOldInputProvider($app['typicms.form.oldinput']);
             $formBuilder->setToken($app['session.store']->token());
 
             return $formBuilder;
@@ -60,14 +60,14 @@ class BootFormsServiceProvider extends ServiceProvider
     protected function registerBasicFormBuilder()
     {
         $this->app->singleton('bootform.basic', function ($app) {
-            return new BasicFormBuilder($app['adamwathan.form']);
+            return new BasicFormBuilder($app['typicms.form']);
         });
     }
 
     protected function registerHorizontalFormBuilder()
     {
         $this->app->singleton('bootform.horizontal', function ($app) {
-            return new HorizontalFormBuilder($app['adamwathan.form']);
+            return new HorizontalFormBuilder($app['typicms.form']);
         });
     }
 
