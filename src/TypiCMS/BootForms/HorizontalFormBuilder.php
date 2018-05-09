@@ -2,10 +2,10 @@
 
 namespace TypiCMS\BootForms;
 
-use TypiCMS\Form\FormBuilder;
 use TypiCMS\BootForms\Elements\CheckGroup;
 use TypiCMS\BootForms\Elements\HorizontalFormGroup;
 use TypiCMS\BootForms\Elements\OffsetFormGroup;
+use TypiCMS\Form\FormBuilder;
 
 class HorizontalFormBuilder extends BasicFormBuilder
 {

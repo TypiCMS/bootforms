@@ -1,8 +1,8 @@
 <?php
 
-use TypiCMS\Form\FormBuilder;
 use PHPUnit\Framework\TestCase;
 use TypiCMS\BootForms\BasicFormBuilder;
+use TypiCMS\Form\FormBuilder;
 
 class BasicFormBuilderTest extends TestCase
 {
