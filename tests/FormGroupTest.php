@@ -1,14 +1,14 @@
 <?php
 
-use TypiCMS\BootForms\Elements\FormGroup;
 use AdamWathan\Form\FormBuilder;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\BootForms\Elements\FormGroup;
 
 class FormGroupTest extends TestCase
 {
     public function setUp()
     {
-        $this->builder = new FormBuilder;
+        $this->builder = new FormBuilder();
     }
 
     public function testCanRenderBasicFormGroup()

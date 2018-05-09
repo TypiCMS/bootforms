@@ -1,4 +1,6 @@
-<?php namespace TypiCMS\BootForms;
+<?php
+
+namespace TypiCMS\BootForms;
 
 use AdamWathan\Form\ErrorStore\IlluminateErrorStore;
 use AdamWathan\Form\FormBuilder;
@@ -7,7 +9,6 @@ use Illuminate\Support\ServiceProvider;
 
 class BootFormsServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -47,7 +48,7 @@ class BootFormsServiceProvider extends ServiceProvider
     protected function registerFormBuilder()
     {
         $this->app->singleton('adamwathan.form', function ($app) {
-            $formBuilder = new FormBuilder;
+            $formBuilder = new FormBuilder();
             $formBuilder->setErrorStore($app['adamwathan.form.errorstore']);
             $formBuilder->setOldInputProvider($app['adamwathan.form.oldinput']);
             $formBuilder->setToken($app['session.store']->token());

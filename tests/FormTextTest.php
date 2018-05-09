@@ -1,7 +1,7 @@
 <?php
 
-use TypiCMS\BootForms\Elements\FormText;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\BootForms\Elements\FormText;
 
 class FormTextTest extends TestCase
 {

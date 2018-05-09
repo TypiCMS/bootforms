@@ -1,11 +1,12 @@
-<?php namespace TypiCMS\BootForms;
+<?php
 
+namespace TypiCMS\BootForms;
+
+use AdamWathan\Form\FormBuilder;
 use TypiCMS\BootForms\Elements\CheckGroup;
 use TypiCMS\BootForms\Elements\FormGroup;
 use TypiCMS\BootForms\Elements\GroupWrapper;
-use TypiCMS\BootForms\Elements\FormText;
 use TypiCMS\BootForms\Elements\InputGroup;
-use AdamWathan\Form\FormBuilder;
 
 class BasicFormBuilder
 {
@@ -50,12 +51,12 @@ class BasicFormBuilder
         return $this->formGroup($label, $name, $control);
     }
 
-    public function button($value, $name = null, $type = "btn-secondary")
+    public function button($value, $name = null, $type = 'btn-secondary')
     {
         return $this->builder->button($value, $name)->addClass('btn')->addClass($type);
     }
 
-    public function submit($value = "Submit", $type = "btn-primary")
+    public function submit($value = 'Submit', $type = 'btn-primary')
     {
         return $this->builder->submit($value)->addClass('btn')->addClass($type);
     }
@@ -82,6 +83,7 @@ class BasicFormBuilder
     protected function checkGroup($label, $name, $control)
     {
         $checkGroup = $this->buildCheckGroup($label, $name, $control);
+
         return $this->wrap($checkGroup);
     }
 
@@ -96,6 +98,7 @@ class BasicFormBuilder
             $checkGroup->invalidFeedback($this->builder->getError($name));
             $control->addClass('is-invalid');
         }
+
         return $checkGroup;
     }
 
@@ -118,6 +121,7 @@ class BasicFormBuilder
     protected function radioGroup($label, $name, $control)
     {
         $checkGroup = $this->buildCheckGroup($label, $name, $control);
+
         return $this->wrap($checkGroup);
     }
 

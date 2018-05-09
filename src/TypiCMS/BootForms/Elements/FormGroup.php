@@ -1,4 +1,6 @@
-<?php namespace TypiCMS\BootForms\Elements;
+<?php
+
+namespace TypiCMS\BootForms\Elements;
 
 use AdamWathan\Form\Elements\Element;
 use AdamWathan\Form\Elements\Label;
@@ -37,6 +39,7 @@ class FormGroup extends Element
             return;
         }
         $this->formText = new FormText($text);
+
         return $this;
     }
 
@@ -55,6 +58,7 @@ class FormGroup extends Element
             return;
         }
         $this->invalidFeedback = new InvalidFeedback($text);
+
         return $this;
     }
 
@@ -80,6 +84,7 @@ class FormGroup extends Element
     public function __call($method, $parameters)
     {
         call_user_func_array([$this->control, $method], $parameters);
+
         return $this;
     }
 }

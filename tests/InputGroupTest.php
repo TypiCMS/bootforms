@@ -1,7 +1,7 @@
 <?php
 
-use TypiCMS\BootForms\Elements\InputGroup;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\BootForms\Elements\InputGroup;
 
 class InputGroupTest extends TestCase
 {
