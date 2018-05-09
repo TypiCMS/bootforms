@@ -2,8 +2,8 @@
 
 namespace TypiCMS\BootForms\Elements;
 
-use AdamWathan\Form\Elements\Element;
-use AdamWathan\Form\Elements\Label;
+use TypiCMS\Form\Elements\Element;
+use TypiCMS\Form\Elements\Label;
 
 class FormGroup extends Element
 {

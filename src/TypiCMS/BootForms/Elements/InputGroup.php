@@ -2,7 +2,7 @@
 
 namespace TypiCMS\BootForms\Elements;
 
-use AdamWathan\Form\Elements\Text;
+use TypiCMS\Form\Elements\Text;
 
 class InputGroup extends Text
 {

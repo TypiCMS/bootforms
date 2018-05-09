@@ -2,7 +2,7 @@
 
 namespace TypiCMS\BootForms\Elements;
 
-use AdamWathan\Form\Elements\Element;
+use TypiCMS\Form\Elements\Element;
 
 class FormText extends Element
 {

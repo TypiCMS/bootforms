@@ -2,7 +2,7 @@
 
 namespace TypiCMS\BootForms;
 
-use AdamWathan\Form\FormBuilder;
+use TypiCMS\Form\FormBuilder;
 use TypiCMS\BootForms\Elements\CheckGroup;
 use TypiCMS\BootForms\Elements\HorizontalFormGroup;
 use TypiCMS\BootForms\Elements\OffsetFormGroup;

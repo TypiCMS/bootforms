@@ -1,6 +1,6 @@
 <?php
 
-use AdamWathan\Form\FormBuilder;
+use TypiCMS\Form\FormBuilder;
 use PHPUnit\Framework\TestCase;
 use TypiCMS\BootForms\HorizontalFormBuilder;
 
@@ -87,7 +87,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderTextGroupWithError()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('TypiCMS\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Email is required.');
 
@@ -100,7 +100,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderTextGroupWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('example@example.com');
 
@@ -113,7 +113,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderTextGroupWithOldInputAndDefaultValue()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('example@example.com');
 
@@ -133,13 +133,13 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderTextGroupWithOldInputAndError()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('example@example.com');
 
         $this->builder->setOldInputProvider($oldInput);
 
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('TypiCMS\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Email is required.');
 
@@ -159,7 +159,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderPasswordGroupDoesntKeepOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('password');
 
@@ -172,7 +172,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderPasswordGroupWithError()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('TypiCMS\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Password is required.');
 
@@ -230,7 +230,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderCheckboxWithError()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('TypiCMS\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Must agree to terms.');
 
@@ -243,7 +243,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderCheckboxWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('1');
 
@@ -277,7 +277,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderRadioWithError()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('TypiCMS\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Sample error');
 
@@ -289,7 +289,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderRadioWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('red');
 
@@ -323,7 +323,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderTextareaWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('Sample bio');
 
@@ -335,7 +335,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderTextareaWithError()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('TypiCMS\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Sample error');
 
@@ -356,7 +356,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderSelectWithError()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('TypiCMS\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Color is required.');
 
@@ -371,7 +371,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderSelectWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->andReturn('2');
 
@@ -407,7 +407,7 @@ class HorizontalFormBuilderTest extends TestCase
 
     public function testRenderFileGroupWithError()
     {
-        $errorStore = Mockery::mock('AdamWathan\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore = Mockery::mock('TypiCMS\Form\ErrorStore\ErrorStoreInterface');
         $errorStore->shouldReceive('hasError')->andReturn(true);
         $errorStore->shouldReceive('getError')->andReturn('Sample error');
 

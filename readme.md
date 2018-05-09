@@ -58,7 +58,7 @@ BootForm::text('Email', 'email');
 Usage outside of Laravel is a little trickier since there’s a bit of a dependency stack you need to build up, but it’s not too tricky.
 
 ```php
-$formBuilder = new AdamWathan\Form\FormBuilder;
+$formBuilder = new TypiCMS\Form\FormBuilder;
 
 $formBuilder->setOldInputProvider($myOldInputProvider);
 $formBuilder->setErrorStore($myErrorStore);
@@ -70,7 +70,7 @@ $horizontalBootFormsBuilder = new TypiCMS\BootForms\HorizontalFormBuilder($formB
 $bootForm = new TypiCMS\BootForms\BootForm($basicBootFormsBuilder, $horizontalBootFormsBuilder);
 ```
 
-> Note: You must provide your own implementations of `AdamWathan\Form\OldInputInterface` and `AdamWathan\Form\ErrorStoreInterface` when not using the implementations meant for Laravel.
+> Note: You must provide your own implementations of `TypiCMS\Form\OldInputInterface` and `TypiCMS\Form\ErrorStoreInterface` when not using the implementations meant for Laravel.
 
 ## Using BootForms
 

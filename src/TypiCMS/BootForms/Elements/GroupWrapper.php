@@ -2,7 +2,7 @@
 
 namespace TypiCMS\BootForms\Elements;
 
-use AdamWathan\Form\Elements\Label;
+use TypiCMS\Form\Elements\Label;
 
 class GroupWrapper
 {

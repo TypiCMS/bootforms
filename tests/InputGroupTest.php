@@ -8,7 +8,7 @@ class InputGroupTest extends TestCase
     public function testCanRenderBasicText()
     {
         $input = new InputGroup('email');
-        $this->assertInstanceOf('AdamWathan\Form\Elements\Text', $input);
+        $this->assertInstanceOf('TypiCMS\Form\Elements\Text', $input);
 
         $expected = '<div class="input-group"><input type="text" name="email"></div>';
         $result = $input->render();
