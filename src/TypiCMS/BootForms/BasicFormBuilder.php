@@ -120,9 +120,25 @@ class BasicFormBuilder
 
     protected function radioGroup($label, $name, $control)
     {
-        $checkGroup = $this->buildCheckGroup($label, $name, $control);
+        $checkGroup = $this->buildRadioGroup($label, $name, $control);
 
         return $this->wrap($checkGroup);
+    }
+
+    protected function buildRadioGroup($label, $name, $control)
+    {
+        $id = $name.'_'.strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', $control->getAttribute('value'))));
+        $label = $this->builder->label($label, $name)->addClass('form-check-label')->forId($id);
+        $control->id($id)->addClass('form-check-input');
+
+        $checkGroup = new CheckGroup($label, $control);
+
+        if ($this->builder->hasError($name)) {
+            $checkGroup->invalidFeedback($this->builder->getError($name));
+            $control->addClass('is-invalid');
+        }
+
+        return $checkGroup;
     }
 
     public function textarea($label, $name)

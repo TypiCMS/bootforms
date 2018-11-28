@@ -269,7 +269,7 @@ class BasicFormBuilderTest extends TestCase
 
     public function testRenderRadio()
     {
-        $expected = '<div class="form-check"><input type="radio" name="color" value="red" id="color" class="form-check-input"><label class="form-check-label" for="color">Red</label></div>';
+        $expected = '<div class="form-check"><input type="radio" name="color" value="red" id="color_red" class="form-check-input"><label class="form-check-label" for="color_red">Red</label></div>';
         $result = $this->form->radio('Red', 'color', 'red')->render();
         $this->assertEquals($expected, $result);
     }
@@ -281,7 +281,7 @@ class BasicFormBuilderTest extends TestCase
         $errorStore->shouldReceive('getError')->andReturn('Sample error');
 
         $this->builder->setErrorStore($errorStore);
-        $expected = '<div class="form-check"><input type="radio" name="color" value="red" id="color" class="form-check-input is-invalid"><label class="form-check-label" for="color">Red</label><div class="invalid-feedback">Sample error</div></div>';
+        $expected = '<div class="form-check"><input type="radio" name="color" value="red" id="color_red" class="form-check-input is-invalid"><label class="form-check-label" for="color_red">Red</label><div class="invalid-feedback">Sample error</div></div>';
         $result = $this->form->radio('Red', 'color', 'red')->render();
         $this->assertEquals($expected, $result);
     }
@@ -294,7 +294,7 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setOldInputProvider($oldInput);
 
-        $expected = '<div class="form-check"><input type="radio" name="color" value="red" id="color" class="form-check-input" checked="checked"><label class="form-check-label" for="color">Red</label></div>';
+        $expected = '<div class="form-check"><input type="radio" name="color" value="red" id="color_red" class="form-check-input" checked="checked"><label class="form-check-label" for="color_red">Red</label></div>';
         $result = $this->form->radio('Red', 'color', 'red')->render();
         $this->assertEquals($expected, $result);
     }
@@ -374,28 +374,28 @@ class BasicFormBuilderTest extends TestCase
 
     public function testRenderInlineRadioFallback()
     {
-        $expected = '<div class="form-check form-check-inline"><input type="radio" name="color" value="Red" id="color" class="form-check-input"><label class="form-check-label" for="color">Red</label></div>';
+        $expected = '<div class="form-check form-check-inline"><input type="radio" name="color" value="Red" id="color_red" class="form-check-input"><label class="form-check-label" for="color_red">Red</label></div>';
         $result = $this->form->inlineRadio('Red', 'color')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderInlineRadioFallbackWithChaining()
     {
-        $expected = '<div class="form-check form-check-inline"><input type="radio" name="colour" value="Canada Red" id="colour" class="form-check-input" chain="link" checked="checked"><label class="form-check-label" for="colour">Canada Red</label></div>';
+        $expected = '<div class="form-check form-check-inline"><input type="radio" name="colour" value="Canada Red" id="colour_canada_red" class="form-check-input" chain="link" checked="checked"><label class="form-check-label" for="colour_canada_red">Canada Red</label></div>';
         $result = $this->form->inlineRadio('Canada Red', 'colour')->chain('link')->check()->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderInlineRadioModifier()
     {
-        $expected = '<div class="form-check form-check-inline"><input type="radio" name="color" value="Red" id="color" class="form-check-input"><label class="form-check-label" for="color">Red</label></div>';
+        $expected = '<div class="form-check form-check-inline"><input type="radio" name="color" value="Red" id="color_red" class="form-check-input"><label class="form-check-label" for="color_red">Red</label></div>';
         $result = $this->form->radio('Red', 'color')->inline()->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderInlineRadioModifierWithChaining()
     {
-        $expected = '<div class="form-check form-check-inline"><input type="radio" name="colour" value="Canada Red" id="colour" class="form-check-input" chain="link" checked="checked"><label class="form-check-label" for="colour">Canada Red</label></div>';
+        $expected = '<div class="form-check form-check-inline"><input type="radio" name="colour" value="Canada Red" id="colour_canada_red" class="form-check-input" chain="link" checked="checked"><label class="form-check-label" for="colour_canada_red">Canada Red</label></div>';
         $result = $this->form->radio('Canada Red', 'colour')->inline()->chain('link')->check()->render();
         $this->assertEquals($expected, $result);
     }
