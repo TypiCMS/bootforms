@@ -51,14 +51,14 @@ class BasicFormBuilder
         return $this->formGroup($label, $name, $control);
     }
 
-    public function button($value, $name = null, $type = 'btn-secondary')
+    public function button($value, $name = null, $type = 'btn btn-secondary')
     {
-        return $this->builder->button($value, $name)->addClass('btn')->addClass($type);
+        return $this->builder->button($value, $name)->addClass($type);
     }
 
-    public function submit($value = 'Submit', $type = 'btn-primary')
+    public function submit($value = 'Submit', $type = 'btn btn-primary')
     {
-        return $this->builder->submit($value)->addClass('btn')->addClass($type);
+        return $this->builder->submit($value)->addClass($type);
     }
 
     public function select($label, $name, $options = [])
