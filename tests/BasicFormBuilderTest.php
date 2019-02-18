@@ -657,6 +657,98 @@ class BasicFormBuilderTest extends TestCase
         $this->assertEquals($expected, $result);
     }
 
+    public function testRenderNumberGroup()
+    {
+        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" id="number" class="form-control"></div>';
+        $result = $this->form->number('Number', 'number')->render();
+        $this->assertEquals($expected, $result);
+    }
+
+    public function testRenderNumberGroupWithValue()
+    {
+        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" id="number" class="form-control" value="15"></div>';
+        $result = $this->form->number('Number', 'number')->value('15')->render();
+        $this->assertEquals($expected, $result);
+    }
+
+    public function testRenderNumberGroupWithError()
+    {
+        $errorStore = Mockery::mock('TypiCMS\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore->shouldReceive('hasError')->andReturn(true);
+        $errorStore->shouldReceive('getError')->andReturn('Number is required.');
+
+        $this->builder->setErrorStore($errorStore);
+
+        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" id="number" class="form-control is-invalid"><div class="invalid-feedback">Number is required.</div></div>';
+        $result = $this->form->number('Number', 'number')->render();
+        $this->assertEquals($expected, $result);
+    }
+
+    public function testRenderNumberGroupWithErrorAndCustomFormText()
+    {
+        $errorStore = Mockery::mock('TypiCMS\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore->shouldReceive('hasError')->andReturn(true);
+        $errorStore->shouldReceive('getError')->andReturn('Number is required.');
+
+        $this->builder->setErrorStore($errorStore);
+
+        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" id="number" class="form-control is-invalid"><div class="invalid-feedback">Number is required.</div><small class="form-text">some custom text</small></div>';
+        $result = $this->form->number('Number', 'number')->formText('some custom text')->render();
+        $this->assertEquals($expected, $result);
+    }
+
+    public function testRenderNumberGroupWithOldInput()
+    {
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
+        $oldInput->shouldReceive('hasOldInput')->andReturn(true);
+        $oldInput->shouldReceive('getOldInput')->andReturn('15');
+
+        $this->builder->setOldInputProvider($oldInput);
+
+        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" value="15" id="number" class="form-control"></div>';
+        $result = $this->form->number('Number', 'number')->render();
+        $this->assertEquals($expected, $result);
+    }
+
+    public function testRenderNumberGroupWithOldInputAndDefaultValue()
+    {
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
+        $oldInput->shouldReceive('hasOldInput')->andReturn(true);
+        $oldInput->shouldReceive('getOldInput')->andReturn('15');
+
+        $this->builder->setOldInputProvider($oldInput);
+
+        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" value="15" id="number" class="form-control"></div>';
+        $result = $this->form->number('Number', 'number')->defaultValue('22')->render();
+        $this->assertEquals($expected, $result);
+    }
+
+    public function testRenderNumberGroupWithDefaultValue()
+    {
+        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" id="number" class="form-control" value="15"></div>';
+        $result = $this->form->number('Number', 'number')->defaultValue('15')->render();
+        $this->assertEquals($expected, $result);
+    }
+
+    public function testRenderNumberGroupWithOldInputAndError()
+    {
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
+        $oldInput->shouldReceive('hasOldInput')->andReturn(true);
+        $oldInput->shouldReceive('getOldInput')->andReturn('18');
+
+        $this->builder->setOldInputProvider($oldInput);
+
+        $errorStore = Mockery::mock('TypiCMS\Form\ErrorStore\ErrorStoreInterface');
+        $errorStore->shouldReceive('hasError')->andReturn(true);
+        $errorStore->shouldReceive('getError')->andReturn('Number is required.');
+
+        $this->builder->setErrorStore($errorStore);
+
+        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" value="18" id="number" class="form-control is-invalid"><div class="invalid-feedback">Number is required.</div></div>';
+        $result = $this->form->number('Number', 'number')->render();
+        $this->assertEquals($expected, $result);
+    }
+
     private function getStubObject()
     {
         $obj = new stdClass();

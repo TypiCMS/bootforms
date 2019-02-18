@@ -195,6 +195,13 @@ class BasicFormBuilder
         return $this->formGroup($label, $name, $control);
     }
 
+    public function number($label, $name, $value = null)
+    {
+        $control = $this->builder->number($name)->value($value);
+
+        return $this->formGroup($label, $name, $control);
+    }
+
     public function __call($method, $parameters)
     {
         return call_user_func_array([$this->builder, $method], $parameters);
