@@ -20,7 +20,7 @@ class InputGroupTest extends TestCase
         $input = new InputGroup('username');
         $this->assertEquals($input, $input->beforeAddon('@'));
 
-        $expected = '<div class="input-group"><span class="input-group-addon">@</span><input type="text" name="username"></div>';
+        $expected = '<div class="input-group"><span class="input-group-prepend">@</span><input type="text" name="username"></div>';
         $result = $input->render();
         $this->assertEquals($expected, $result);
     }
@@ -31,7 +31,7 @@ class InputGroupTest extends TestCase
         $this->assertEquals($input, $input->type('email'));
         $this->assertEquals($input, $input->afterAddon('@domain.com'));
 
-        $expected = '<div class="input-group"><input type="email" name="mail"><span class="input-group-addon">@domain.com</span></div>';
+        $expected = '<div class="input-group"><input type="email" name="mail"><span class="input-group-append">@domain.com</span></div>';
         $result = $input->render();
         $this->assertEquals($expected, $result);
     }

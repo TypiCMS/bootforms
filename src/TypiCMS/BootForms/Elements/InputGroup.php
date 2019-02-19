@@ -31,12 +31,12 @@ class InputGroup extends Text
         return $this;
     }
 
-    protected function renderAddons($addons)
+    protected function renderAddons($addons, $class)
     {
         $html = '';
 
         foreach ($addons as $addon) {
-            $html .= '<span class="input-group-addon">';
+            $html .= sprintf('<span class="input-group-%s">', $class);
             $html .= $addon;
             $html .= '</span>';
         }
@@ -47,9 +47,9 @@ class InputGroup extends Text
     public function render()
     {
         $html = '<div class="input-group">';
-        $html .= $this->renderAddons($this->beforeAddon);
+        $html .= $this->renderAddons($this->beforeAddon, 'prepend');
         $html .= parent::render();
-        $html .= $this->renderAddons($this->afterAddon);
+        $html .= $this->renderAddons($this->afterAddon, 'append');
         $html .= '</div>';
 
         return $html;
