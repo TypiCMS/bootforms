@@ -563,21 +563,21 @@ class BasicFormBuilderTest extends TestCase
 
     public function testRenderInputGroupWithBeforeAddon()
     {
-        $expected = '<div class="form-group"><label for="username">Username</label><div class="input-group"><span class="input-group-addon">@</span><input type="text" name="username" id="username" class="form-control"></div></div>';
+        $expected = '<div class="form-group"><label for="username">Username</label><div class="input-group"><span class="input-group-prepend">@</span><input type="text" name="username" id="username" class="form-control"></div></div>';
         $result = $this->form->inputGroup('Username', 'username')->beforeAddon('@')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderInputGroupWithAfterAddon()
     {
-        $expected = '<div class="form-group"><label for="site">Site</label><div class="input-group"><input type="text" name="site" id="site" class="form-control"><span class="input-group-addon">.com.br</span></div></div>';
+        $expected = '<div class="form-group"><label for="site">Site</label><div class="input-group"><input type="text" name="site" id="site" class="form-control"><span class="input-group-append">.com.br</span></div></div>';
         $result = $this->form->inputGroup('Site', 'site')->afterAddon('.com.br')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderInputGroupChangeTypeWithBothAddon()
     {
-        $expected = '<div class="form-group"><label for="secret">Secret</label><div class="input-group"><span class="input-group-addon">before</span><input type="password" name="secret" id="secret" class="form-control"><span class="input-group-addon">after</span></div></div>';
+        $expected = '<div class="form-group"><label for="secret">Secret</label><div class="input-group"><span class="input-group-prepend">before</span><input type="password" name="secret" id="secret" class="form-control"><span class="input-group-append">after</span></div></div>';
         $result = $this->form
             ->inputGroup('Secret', 'secret')
             ->type('password')
