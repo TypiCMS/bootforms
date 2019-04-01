@@ -124,7 +124,7 @@ BootForm::open()->get()->action('/users');
 BootForm::text('First Name', 'first_name')->defaultValue('John Doe');
 ```
 
-For more information about what’s possible, check out the documentation for [my basic Form package.](https://github.com/adamwathan/form)
+For more information about what’s possible, check out the documentation for [the Form package.](https://github.com/TypiCMS/form)
 
 ### Reduced Boilerplate
 
@@ -167,6 +167,38 @@ BootForms makes a few decisions for you and allows you to pare it down a bit mor
   {!! BootForm::password('Password', 'password') !!}
   {!! BootForm::submit('Submit') !!}
 {!! BootForm::close() !!}
+```
+
+### Input groups
+
+Bootforms allows you to create input groups.
+
+```php
+//  <div class="form-group">
+//      <label for="amount">Amount</label>
+//      <div class="input-group">
+//          <span class="input-group-prepend">
+//              <span class="input-group-text">$</span>
+//          </span>
+//          <input type="number" name="amount" id="amount" class="form-control">
+//      </div>
+//  </div>
+{!! BootForm::inputGroup('Amount', 'amount')->type('number')->beforeAddon('<span class="input-group-text">$</span>') !!}
+```
+
+With a button appended.
+
+```php
+//  <div class="form-group">
+//      <label for="email">Email</label>
+//      <div class="input-group">
+//          <input type="text" name="email" id="email" class="form-control">
+//          <span class="input-group-append">
+//              <button type="submit" class="btn btn-primary">OK</button>
+//          </span>
+//      </div>
+//  </div>
+{!! BootForm::inputGroup('Email', 'email')->afterAddon(BootForm::submit('OK')) !!}
 ```
 
 ### Automatic Validation State
