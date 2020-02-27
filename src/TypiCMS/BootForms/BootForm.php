@@ -5,7 +5,9 @@ namespace TypiCMS\BootForms;
 class BootForm
 {
     protected $builder;
+
     protected $basicFormBuilder;
+
     protected $horizontalFormBuilder;
 
     public function __construct(BasicFormBuilder $basicFormBuilder, HorizontalFormBuilder $horizontalFormBuilder)

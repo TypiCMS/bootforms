@@ -5,6 +5,7 @@ namespace TypiCMS\BootForms\Elements;
 class OffsetFormGroup
 {
     protected $control;
+
     protected $columnSizes;
 
     public function __construct($control, $columnSizes)

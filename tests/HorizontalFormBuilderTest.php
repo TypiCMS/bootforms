@@ -7,6 +7,7 @@ use TypiCMS\Form\FormBuilder;
 class HorizontalFormBuilderTest extends TestCase
 {
     private $form;
+
     private $builder;
 
     public function setUp()

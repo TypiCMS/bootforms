@@ -7,6 +7,7 @@ use TypiCMS\Form\Elements\Label;
 class GroupWrapper
 {
     protected $formGroup;
+
     protected $target;
 
     public function __construct($formGroup)

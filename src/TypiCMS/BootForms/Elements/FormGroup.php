@@ -8,8 +8,11 @@ use TypiCMS\Form\Elements\Label;
 class FormGroup extends Element
 {
     protected $label;
+
     protected $control;
+
     protected $formText;
+
     protected $invalidFeedback;
 
     public function __construct(Label $label, Element $control)
