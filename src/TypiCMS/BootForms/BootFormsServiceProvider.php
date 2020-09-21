@@ -51,22 +51,22 @@ class BootFormsServiceProvider extends ServiceProvider implements DeferrableProv
 
     protected function registerBasicFormBuilder()
     {
-        $this->app->singleton('bootform.basic', function ($app) {
+        $this->app->singleton('typicms.bootform.basic', function ($app) {
             return new BasicFormBuilder($app['typicms.form']);
         });
     }
 
     protected function registerHorizontalFormBuilder()
     {
-        $this->app->singleton('bootform.horizontal', function ($app) {
+        $this->app->singleton('typicms.bootform.horizontal', function ($app) {
             return new HorizontalFormBuilder($app['typicms.form']);
         });
     }
 
     protected function registerBootForm()
     {
-        $this->app->singleton('bootform', function ($app) {
-            return new BootForm($app['bootform.basic'], $app['bootform.horizontal']);
+        $this->app->singleton('typicms.bootform', function ($app) {
+            return new BootForm($app['typicms.bootform.basic'], $app['typicms.bootform.horizontal']);
         });
     }
 
