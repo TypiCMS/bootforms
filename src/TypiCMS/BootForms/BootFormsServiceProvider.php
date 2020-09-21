@@ -77,6 +77,6 @@ class BootFormsServiceProvider extends ServiceProvider implements DeferrableProv
      */
     public function provides()
     {
-        return ['bootform'];
+        return ['typicms.bootform'];
     }
 }
