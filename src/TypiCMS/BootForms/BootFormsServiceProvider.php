@@ -2,20 +2,14 @@
 
 namespace TypiCMS\BootForms;
 
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use TypiCMS\Form\ErrorStore\IlluminateErrorStore;
 use TypiCMS\Form\FormBuilder;
 use TypiCMS\Form\OldInput\IlluminateOldInputProvider;
 
-class BootFormsServiceProvider extends ServiceProvider
+class BootFormsServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = false;
-
     /**
      * Register the service provider.
      */
