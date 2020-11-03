@@ -18,6 +18,7 @@ class FormGroup extends Element
     public function __construct(Label $label, Element $control)
     {
         $this->label = $label;
+        $this->label->addClass('form-label');
         $this->control = $control;
         $this->addClass('mb-3');
     }

@@ -71,7 +71,7 @@ class GroupWrapper
     public function required($conditional = true)
     {
         if ($conditional) {
-            $this->formGroup->label()->addClass('control-label-required');
+            $this->formGroup->label()->addClass('form-label-required');
         }
 
         call_user_func_array([$this->target, 'required'], [$conditional]);
