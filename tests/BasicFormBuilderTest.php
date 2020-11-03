@@ -4,6 +4,10 @@ use PHPUnit\Framework\TestCase;
 use TypiCMS\BootForms\BasicFormBuilder;
 use TypiCMS\Form\FormBuilder;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class BasicFormBuilderTest extends TestCase
 {
     private $form;
@@ -23,14 +27,14 @@ class BasicFormBuilderTest extends TestCase
 
     public function testRenderTextGroup()
     {
-        $expected = '<div class="form-group"><label for="email">Email</label><input type="text" name="email" id="email" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="email" class="form-label">Email</label><input type="text" name="email" class="form-control" id="email"></div>';
         $result = $this->form->text('Email', 'email')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderTextGroupWithValue()
     {
-        $expected = '<div class="form-group"><label for="email">Email</label><input type="text" name="email" id="email" class="form-control" value="example@example.com"></div>';
+        $expected = '<div class="mb-3"><label for="email" class="form-label">Email</label><input type="text" name="email" class="form-control" id="email" value="example@example.com"></div>';
         $result = $this->form->text('Email', 'email')->value('example@example.com')->render();
         $this->assertEquals($expected, $result);
     }
@@ -43,7 +47,7 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group"><label for="email">Email</label><input type="text" name="email" id="email" class="form-control is-invalid"><div class="invalid-feedback">Email is required.</div></div>';
+        $expected = '<div class="mb-3"><label for="email" class="form-label">Email</label><input type="text" name="email" class="form-control is-invalid" id="email"><div class="invalid-feedback">Email is required.</div></div>';
         $result = $this->form->text('Email', 'email')->render();
         $this->assertEquals($expected, $result);
     }
@@ -56,7 +60,7 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group"><label for="email">Email</label><input type="text" name="email" id="email" class="form-control is-invalid"><div class="invalid-feedback">Email is required.</div><small class="form-text">some custom text</small></div>';
+        $expected = '<div class="mb-3"><label for="email" class="form-label">Email</label><input type="text" name="email" class="form-control is-invalid" id="email"><div class="invalid-feedback">Email is required.</div><small class="form-text">some custom text</small></div>';
         $result = $this->form->text('Email', 'email')->formText('some custom text')->render();
         $this->assertEquals($expected, $result);
     }
@@ -69,7 +73,7 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setOldInputProvider($oldInput);
 
-        $expected = '<div class="form-group"><label for="email">Email</label><input type="text" name="email" value="example@example.com" id="email" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="email" class="form-label">Email</label><input type="text" name="email" value="example@example.com" class="form-control" id="email"></div>';
         $result = $this->form->text('Email', 'email')->render();
         $this->assertEquals($expected, $result);
     }
@@ -82,14 +86,14 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setOldInputProvider($oldInput);
 
-        $expected = '<div class="form-group"><label for="email">Email</label><input type="text" name="email" value="example@example.com" id="email" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="email" class="form-label">Email</label><input type="text" name="email" value="example@example.com" class="form-control" id="email"></div>';
         $result = $this->form->text('Email', 'email')->defaultValue('test@test.com')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderTextGroupWithDefaultValue()
     {
-        $expected = '<div class="form-group"><label for="email">Email</label><input type="text" name="email" id="email" class="form-control" value="test@test.com"></div>';
+        $expected = '<div class="mb-3"><label for="email" class="form-label">Email</label><input type="text" name="email" class="form-control" id="email" value="test@test.com"></div>';
         $result = $this->form->text('Email', 'email')->defaultValue('test@test.com')->render();
         $this->assertEquals($expected, $result);
     }
@@ -108,14 +112,14 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group"><label for="email">Email</label><input type="text" name="email" value="example@example.com" id="email" class="form-control is-invalid"><div class="invalid-feedback">Email is required.</div></div>';
+        $expected = '<div class="mb-3"><label for="email" class="form-label">Email</label><input type="text" name="email" value="example@example.com" class="form-control is-invalid" id="email"><div class="invalid-feedback">Email is required.</div></div>';
         $result = $this->form->text('Email', 'email')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderPasswordGroup()
     {
-        $expected = '<div class="form-group"><label for="password">Password</label><input type="password" name="password" id="password" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="password" class="form-label">Password</label><input type="password" name="password" class="form-control" id="password"></div>';
         $result = $this->form->password('Password', 'password')->render();
         $this->assertEquals($expected, $result);
     }
@@ -128,7 +132,7 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setOldInputProvider($oldInput);
 
-        $expected = '<div class="form-group"><label for="password">Password</label><input type="password" name="password" id="password" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="password" class="form-label">Password</label><input type="password" name="password" class="form-control" id="password"></div>';
         $result = $this->form->password('Password', 'password')->render();
         $this->assertEquals($expected, $result);
     }
@@ -141,7 +145,7 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group"><label for="password">Password</label><input type="password" name="password" id="password" class="form-control is-invalid"><div class="invalid-feedback">Password is required.</div></div>';
+        $expected = '<div class="mb-3"><label for="password" class="form-label">Password</label><input type="password" name="password" class="form-control is-invalid" id="password"><div class="invalid-feedback">Password is required.</div></div>';
         $result = $this->form->password('Password', 'password')->render();
         $this->assertEquals($expected, $result);
     }
@@ -183,7 +187,7 @@ class BasicFormBuilderTest extends TestCase
 
     public function testRenderSelect()
     {
-        $expected = '<div class="form-group"><label for="color">Favorite Color</label><select name="color" id="color" class="form-control"><option value="1">Red</option><option value="2">Green</option><option value="3">Blue</option></select></div>';
+        $expected = '<div class="mb-3"><label for="color" class="form-label">Favorite Color</label><select name="color" class="form-select" id="color"><option value="1">Red</option><option value="2">Green</option><option value="3">Blue</option></select></div>';
 
         $options = ['1' => 'Red', '2' => 'Green', '3' => 'Blue'];
         $result = $this->form->select('Favorite Color', 'color', $options)->render();
@@ -192,7 +196,7 @@ class BasicFormBuilderTest extends TestCase
 
     public function testRenderSelectWithSelected()
     {
-        $expected = '<div class="form-group"><label for="color">Favorite Color</label><select name="color" id="color" class="form-control"><option value="1">Red</option><option value="2">Green</option><option value="3" selected>Blue</option></select></div>';
+        $expected = '<div class="mb-3"><label for="color" class="form-label">Favorite Color</label><select name="color" class="form-select" id="color"><option value="1">Red</option><option value="2">Green</option><option value="3" selected>Blue</option></select></div>';
         $options = ['1' => 'Red', '2' => 'Green', '3' => 'Blue'];
         $result = $this->form->select('Favorite Color', 'color', $options)->select('3')->render();
         $this->assertEquals($expected, $result);
@@ -206,7 +210,7 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group"><label for="color">Favorite Color</label><select name="color" id="color" class="form-control is-invalid"><option value="1">Red</option><option value="2">Green</option><option value="3">Blue</option></select><div class="invalid-feedback">Color is required.</div></div>';
+        $expected = '<div class="mb-3"><label for="color" class="form-label">Favorite Color</label><select name="color" class="form-select is-invalid" id="color"><option value="1">Red</option><option value="2">Green</option><option value="3">Blue</option></select><div class="invalid-feedback">Color is required.</div></div>';
 
         $options = ['1' => 'Red', '2' => 'Green', '3' => 'Blue'];
         $result = $this->form->select('Favorite Color', 'color', $options)->render();
@@ -221,7 +225,7 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setOldInputProvider($oldInput);
 
-        $expected = '<div class="form-group"><label for="color">Favorite Color</label><select name="color" id="color" class="form-control"><option value="1">Red</option><option value="2" selected>Green</option><option value="3">Blue</option></select></div>';
+        $expected = '<div class="mb-3"><label for="color" class="form-label">Favorite Color</label><select name="color" class="form-select" id="color"><option value="1">Red</option><option value="2" selected>Green</option><option value="3">Blue</option></select></div>';
 
         $options = ['1' => 'Red', '2' => 'Green', '3' => 'Blue'];
         $result = $this->form->select('Favorite Color', 'color', $options)->render();
@@ -302,21 +306,21 @@ class BasicFormBuilderTest extends TestCase
 
     public function testRenderTextarea()
     {
-        $expected = '<div class="form-group"><label for="bio">Bio</label><textarea name="bio" rows="10" cols="50" id="bio" class="form-control"></textarea></div>';
+        $expected = '<div class="mb-3"><label for="bio" class="form-label">Bio</label><textarea name="bio" rows="10" cols="50" class="form-control" id="bio"></textarea></div>';
         $result = $this->form->textarea('Bio', 'bio')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderTextareaWithRows()
     {
-        $expected = '<div class="form-group"><label for="bio">Bio</label><textarea name="bio" rows="5" cols="50" id="bio" class="form-control"></textarea></div>';
+        $expected = '<div class="mb-3"><label for="bio" class="form-label">Bio</label><textarea name="bio" rows="5" cols="50" class="form-control" id="bio"></textarea></div>';
         $result = $this->form->textarea('Bio', 'bio')->rows(5)->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderTextareaWithCols()
     {
-        $expected = '<div class="form-group"><label for="bio">Bio</label><textarea name="bio" rows="10" cols="20" id="bio" class="form-control"></textarea></div>';
+        $expected = '<div class="mb-3"><label for="bio" class="form-label">Bio</label><textarea name="bio" rows="10" cols="20" class="form-control" id="bio"></textarea></div>';
         $result = $this->form->textarea('Bio', 'bio')->cols(20)->render();
         $this->assertEquals($expected, $result);
     }
@@ -328,7 +332,7 @@ class BasicFormBuilderTest extends TestCase
         $oldInput->shouldReceive('getOldInput')->andReturn('Sample bio');
 
         $this->builder->setOldInputProvider($oldInput);
-        $expected = '<div class="form-group"><label for="bio">Bio</label><textarea name="bio" rows="10" cols="50" id="bio" class="form-control">Sample bio</textarea></div>';
+        $expected = '<div class="mb-3"><label for="bio" class="form-label">Bio</label><textarea name="bio" rows="10" cols="50" class="form-control" id="bio">Sample bio</textarea></div>';
         $result = $this->form->textarea('Bio', 'bio')->render();
         $this->assertEquals($expected, $result);
     }
@@ -340,7 +344,7 @@ class BasicFormBuilderTest extends TestCase
         $errorStore->shouldReceive('getError')->andReturn('Sample error');
 
         $this->builder->setErrorStore($errorStore);
-        $expected = '<div class="form-group"><label for="bio">Bio</label><textarea name="bio" rows="10" cols="50" id="bio" class="form-control is-invalid"></textarea><div class="invalid-feedback">Sample error</div></div>';
+        $expected = '<div class="mb-3"><label for="bio" class="form-label">Bio</label><textarea name="bio" rows="10" cols="50" class="form-control is-invalid" id="bio"></textarea><div class="invalid-feedback">Sample error</div></div>';
         $result = $this->form->textarea('Bio', 'bio')->render();
         $this->assertEquals($expected, $result);
     }
@@ -403,7 +407,7 @@ class BasicFormBuilderTest extends TestCase
 
     public function testRenderInlineModifierOnUnsupportedElement()
     {
-        $expected = '<div class="form-group"><label for="name">Name</label><input type="text" name="name" id="name" class="form-control" inline="inline"></div>';
+        $expected = '<div class="mb-3"><label for="name" class="form-label">Name</label><input type="text" name="name" class="form-control" id="name" inline="inline"></div>';
         $result = $this->form->text('Name', 'name')->inline()->render();
         $this->assertEquals($expected, $result);
     }
@@ -460,28 +464,28 @@ class BasicFormBuilderTest extends TestCase
 
     public function testRenderDateGroup()
     {
-        $expected = '<div class="form-group"><label for="birthday">Birthday</label><input type="date" name="birthday" id="birthday" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="birthday" class="form-label">Birthday</label><input type="date" name="birthday" class="form-control" id="birthday"></div>';
         $result = $this->form->date('Birthday', 'birthday')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderDateTimeLocalGroup()
     {
-        $expected = '<div class="form-group"><label for="dob">Date & time of birth</label><input type="datetime-local" name="dob" id="dob" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="dob" class="form-label">Date & time of birth</label><input type="datetime-local" name="dob" class="form-control" id="dob"></div>';
         $result = $this->form->dateTimeLocal('Date & time of birth', 'dob')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderEmailGroup()
     {
-        $expected = '<div class="form-group"><label for="email">Email</label><input type="email" name="email" id="email" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="email" class="form-label">Email</label><input type="email" name="email" class="form-control" id="email"></div>';
         $result = $this->form->email('Email', 'email')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderFileGroup()
     {
-        $expected = '<div class="form-group"><label for="file">File</label><input type="file" name="file" id="file" class="form-control-file"></div>';
+        $expected = '<div class="mb-3"><label for="file" class="form-label">File</label><input type="file" name="file" id="file" class="form-control"></div>';
         $result = $this->form->file('File', 'file')->render();
         $this->assertEquals($expected, $result);
     }
@@ -493,14 +497,14 @@ class BasicFormBuilderTest extends TestCase
         $errorStore->shouldReceive('getError')->andReturn('Sample error');
 
         $this->builder->setErrorStore($errorStore);
-        $expected = '<div class="form-group"><label for="file">File</label><input type="file" name="file" id="file" class="form-control-file is-invalid"><div class="invalid-feedback">Sample error</div></div>';
+        $expected = '<div class="mb-3"><label for="file" class="form-label">File</label><input type="file" name="file" id="file" class="form-control is-invalid"><div class="invalid-feedback">Sample error</div></div>';
         $result = $this->form->file('File', 'file')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testCanAddClassToUnderlyingControl()
     {
-        $expected = '<div class="form-group"><label for="color">Favorite Color</label><select name="color" id="color" class="form-control my-class"><option value="1">Red</option><option value="2">Green</option><option value="3">Blue</option></select></div>';
+        $expected = '<div class="mb-3"><label for="color" class="form-label">Favorite Color</label><select name="color" class="form-select my-class" id="color"><option value="1">Red</option><option value="2">Green</option><option value="3">Blue</option></select></div>';
 
         $options = ['1' => 'Red', '2' => 'Green', '3' => 'Blue'];
         $result = $this->form->select('Favorite Color', 'color', $options)->addClass('my-class')->render();
@@ -509,7 +513,7 @@ class BasicFormBuilderTest extends TestCase
 
     public function testRenderTextGroupWithLabelClass()
     {
-        $expected = '<div class="form-group"><label for="email" class="required">Email</label><input type="text" name="email" id="email" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="email" class="form-label required">Email</label><input type="text" name="email" class="form-control" id="email"></div>';
         $result = $this->form->text('Email', 'email')->labelClass('required')->render();
         $this->assertEquals($expected, $result);
     }
@@ -518,67 +522,67 @@ class BasicFormBuilderTest extends TestCase
     {
         $object = $this->getStubObject();
         $this->form->bind($object);
-        $expected = '<div class="form-group"><label for="first_name">First Name</label><input type="text" name="first_name" value="John" id="first_name" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="first_name" class="form-label">First Name</label><input type="text" name="first_name" value="John" class="form-control" id="first_name"></div>';
         $result = $this->form->text('First Name', 'first_name')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testCanHideLabels()
     {
-        $expected = '<div class="form-group"><label for="email" class="sr-only">Email</label><input type="text" name="email" id="email" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="email" class="form-label visually-hidden">Email</label><input type="text" name="email" class="form-control" id="email"></div>';
         $result = $this->form->text('Email', 'email')->hideLabel()->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRequiredLabels()
     {
-        $expected = '<div class="form-group"><label for="email" class="control-label-required">Email</label><input type="text" name="email" id="email" class="form-control" required="required"></div>';
+        $expected = '<div class="mb-3"><label for="email" class="form-label form-label-required">Email</label><input type="text" name="email" class="form-control" id="email" required="required"></div>';
         $result = $this->form->text('Email', 'email')->required()->render();
         $this->assertEquals($expected, $result);
 
-        $expected = '<div class="form-group"><label for="email">Email</label><input type="text" name="email" id="email" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="email" class="form-label">Email</label><input type="text" name="email" class="form-control" id="email"></div>';
         $result = $this->form->text('Email', 'email')->required(false)->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testCanAddGroupClass()
     {
-        $expected = '<div class="form-group test-class"><label for="email">Email</label><input type="text" name="email" id="email" class="form-control"></div>';
+        $expected = '<div class="mb-3 test-class"><label for="email" class="form-label">Email</label><input type="text" name="email" class="form-control" id="email"></div>';
         $result = $this->form->text('Email', 'email')->addGroupClass('test-class')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testCanRemoveGroupClass()
     {
-        $expected = '<div><label for="email">Email</label><input type="text" name="email" id="email" class="form-control"></div>';
-        $result = $this->form->text('Email', 'email')->removeGroupClass('form-group')->render();
+        $expected = '<div><label for="email" class="form-label">Email</label><input type="text" name="email" class="form-control" id="email"></div>';
+        $result = $this->form->text('Email', 'email')->removeGroupClass('mb-3')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testCanSetGroupData()
     {
-        $expected = '<div class="form-group" data-test="1"><label for="email">Email</label><input type="text" name="email" id="email" class="form-control"></div>';
+        $expected = '<div class="mb-3" data-test="1"><label for="email" class="form-label">Email</label><input type="text" name="email" class="form-control" id="email"></div>';
         $result = $this->form->text('Email', 'email')->groupData('test', 1)->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderInputGroupWithBeforeAddon()
     {
-        $expected = '<div class="form-group"><label for="username">Username</label><div class="input-group"><span class="input-group-prepend">@</span><input type="text" name="username" id="username" class="form-control"></div></div>';
+        $expected = '<div class="mb-3"><label for="username" class="form-label">Username</label><div class="input-group">@<input type="text" name="username" class="form-control" id="username"></div></div>';
         $result = $this->form->inputGroup('Username', 'username')->beforeAddon('@')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderInputGroupWithAfterAddon()
     {
-        $expected = '<div class="form-group"><label for="site">Site</label><div class="input-group"><input type="text" name="site" id="site" class="form-control"><span class="input-group-append">.com.br</span></div></div>';
+        $expected = '<div class="mb-3"><label for="site" class="form-label">Site</label><div class="input-group"><input type="text" name="site" class="form-control" id="site">.com.br</div></div>';
         $result = $this->form->inputGroup('Site', 'site')->afterAddon('.com.br')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderInputGroupChangeTypeWithBothAddon()
     {
-        $expected = '<div class="form-group"><label for="secret">Secret</label><div class="input-group"><span class="input-group-prepend">before</span><input type="password" name="secret" id="secret" class="form-control"><span class="input-group-append">after</span></div></div>';
+        $expected = '<div class="mb-3"><label for="secret" class="form-label">Secret</label><div class="input-group">before<input type="password" name="secret" class="form-control" id="secret">after</div></div>';
         $result = $this->form
             ->inputGroup('Secret', 'secret')
             ->type('password')
@@ -590,7 +594,7 @@ class BasicFormBuilderTest extends TestCase
 
     public function testRenderInputGroupWithValue()
     {
-        $expected = '<div class="form-group"><label for="test">Test</label><div class="input-group"><input type="text" name="test" id="test" class="form-control" value="abc"></div></div>';
+        $expected = '<div class="mb-3"><label for="test" class="form-label">Test</label><div class="input-group"><input type="text" name="test" class="form-control" id="test" value="abc"></div></div>';
         $result = $this->form->inputGroup('Test', 'test')->value('abc')->render();
         $this->assertEquals($expected, $result);
     }
@@ -603,7 +607,7 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setOldInputProvider($oldInput);
 
-        $expected = '<div class="form-group"><label for="test">Test</label><div class="input-group"><input type="text" name="test" value="xyz" id="test" class="form-control"></div></div>';
+        $expected = '<div class="mb-3"><label for="test" class="form-label">Test</label><div class="input-group"><input type="text" name="test" value="xyz" class="form-control" id="test"></div></div>';
         $result = $this->form->inputGroup('Test', 'test')->render();
         $this->assertEquals($expected, $result);
     }
@@ -616,14 +620,14 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setOldInputProvider($oldInput);
 
-        $expected = '<div class="form-group"><label for="test">Test</label><div class="input-group"><input type="text" name="test" value="xyz" id="test" class="form-control"></div></div>';
+        $expected = '<div class="mb-3"><label for="test" class="form-label">Test</label><div class="input-group"><input type="text" name="test" value="xyz" class="form-control" id="test"></div></div>';
         $result = $this->form->inputGroup('Test', 'test')->defaultValue('acb')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderInputGroupWithDefaultValue()
     {
-        $expected = '<div class="form-group"><label for="test">Test</label><div class="input-group"><input type="text" name="test" id="test" class="form-control" value="acb"></div></div>';
+        $expected = '<div class="mb-3"><label for="test" class="form-label">Test</label><div class="input-group"><input type="text" name="test" class="form-control" id="test" value="acb"></div></div>';
         $result = $this->form->inputGroup('Test', 'test')->defaultValue('acb')->render();
         $this->assertEquals($expected, $result);
     }
@@ -642,14 +646,14 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group"><label for="test">Test</label><div class="input-group"><input type="text" name="test" value="abc" id="test" class="form-control is-invalid"></div><div class="invalid-feedback">Test is required.</div></div>';
+        $expected = '<div class="mb-3"><label for="test" class="form-label">Test</label><div class="input-group"><input type="text" name="test" value="abc" class="form-control is-invalid" id="test"></div><div class="invalid-feedback">Test is required.</div></div>';
         $result = $this->form->inputGroup('Test', 'test')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testModifyingDifferentElementsOfAFormGroup()
     {
-        $expected = '<div class="form-group foo" data-foo="bar"><label for="email" class="bar" data-bar="baz">Email</label><input type="text" name="email" id="email" class="form-control baz" data-baz="foo"></div>';
+        $expected = '<div class="mb-3 foo" data-foo="bar"><label for="email" class="form-label bar" data-bar="baz">Email</label><input type="text" name="email" class="form-control baz" id="email" data-baz="foo"></div>';
         $result = $this->form->text('Email', 'email')
             ->group()->addClass('foo')->data('foo', 'bar')
             ->label()->addClass('bar')->data('bar', 'baz')
@@ -660,14 +664,14 @@ class BasicFormBuilderTest extends TestCase
 
     public function testRenderNumberGroup()
     {
-        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" id="number" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="number" class="form-label">Number</label><input type="number" name="number" class="form-control" id="number"></div>';
         $result = $this->form->number('Number', 'number')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderNumberGroupWithValue()
     {
-        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" id="number" class="form-control" value="15"></div>';
+        $expected = '<div class="mb-3"><label for="number" class="form-label">Number</label><input type="number" name="number" class="form-control" id="number" value="15"></div>';
         $result = $this->form->number('Number', 'number')->value('15')->render();
         $this->assertEquals($expected, $result);
     }
@@ -680,7 +684,7 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" id="number" class="form-control is-invalid"><div class="invalid-feedback">Number is required.</div></div>';
+        $expected = '<div class="mb-3"><label for="number" class="form-label">Number</label><input type="number" name="number" class="form-control is-invalid" id="number"><div class="invalid-feedback">Number is required.</div></div>';
         $result = $this->form->number('Number', 'number')->render();
         $this->assertEquals($expected, $result);
     }
@@ -693,7 +697,7 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" id="number" class="form-control is-invalid"><div class="invalid-feedback">Number is required.</div><small class="form-text">some custom text</small></div>';
+        $expected = '<div class="mb-3"><label for="number" class="form-label">Number</label><input type="number" name="number" class="form-control is-invalid" id="number"><div class="invalid-feedback">Number is required.</div><small class="form-text">some custom text</small></div>';
         $result = $this->form->number('Number', 'number')->formText('some custom text')->render();
         $this->assertEquals($expected, $result);
     }
@@ -706,7 +710,7 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setOldInputProvider($oldInput);
 
-        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" value="15" id="number" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="number" class="form-label">Number</label><input type="number" name="number" value="15" class="form-control" id="number"></div>';
         $result = $this->form->number('Number', 'number')->render();
         $this->assertEquals($expected, $result);
     }
@@ -719,14 +723,14 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setOldInputProvider($oldInput);
 
-        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" value="15" id="number" class="form-control"></div>';
+        $expected = '<div class="mb-3"><label for="number" class="form-label">Number</label><input type="number" name="number" value="15" class="form-control" id="number"></div>';
         $result = $this->form->number('Number', 'number')->defaultValue('22')->render();
         $this->assertEquals($expected, $result);
     }
 
     public function testRenderNumberGroupWithDefaultValue()
     {
-        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" id="number" class="form-control" value="15"></div>';
+        $expected = '<div class="mb-3"><label for="number" class="form-label">Number</label><input type="number" name="number" class="form-control" id="number" value="15"></div>';
         $result = $this->form->number('Number', 'number')->defaultValue('15')->render();
         $this->assertEquals($expected, $result);
     }
@@ -745,7 +749,7 @@ class BasicFormBuilderTest extends TestCase
 
         $this->builder->setErrorStore($errorStore);
 
-        $expected = '<div class="form-group"><label for="number">Number</label><input type="number" name="number" value="18" id="number" class="form-control is-invalid"><div class="invalid-feedback">Number is required.</div></div>';
+        $expected = '<div class="mb-3"><label for="number" class="form-label">Number</label><input type="number" name="number" value="18" class="form-control is-invalid" id="number"><div class="invalid-feedback">Number is required.</div></div>';
         $result = $this->form->number('Number', 'number')->render();
         $this->assertEquals($expected, $result);
     }
