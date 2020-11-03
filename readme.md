@@ -1,22 +1,21 @@
-BootForms
-===============
+# BootForms
 
 [![Build Status](https://travis-ci.org/TypiCMS/bootforms.svg?branch=master)](https://travis-ci.org/TypiCMS/bootforms)
 [![Coverage Status](https://coveralls.io/repos/github/TypiCMS/bootforms/badge.svg?branch=master)](https://coveralls.io/github/TypiCMS/bootforms?branch=master)
 [![StyleCI](https://styleci.io/repos/132662795/shield?branch=master)](https://styleci.io/repos/132662795)
 
-BootForms was originally created by [Adam Wathan](https://github.com/adamwathan). It is build on top of the more general [Form](https://github.com/adamwathan/form) package by adding another layer of abstraction to rapidly generate markup for standard Bootstrap 4 forms. Probably not perfect for your super custom branded ready-for-release apps, but a *huge* time saver when you are still in the prototyping stage!
+BootForms was originally created by [Adam Wathan](https://github.com/adamwathan). It is build on top of the more general [Form](https://github.com/adamwathan/form) package by adding another layer of abstraction to rapidly generate markup for standard Bootstrap 4 forms. Probably not perfect for your super custom branded ready-for-release apps, but a _huge_ time saver when you are still in the prototyping stage!
 
-- [Installation](#installing-with-composer)
-- [Using BootForms](#using-bootforms)
-    - [Basic Usage](#basic-usage)
-    - [Customizing Elements](#customizing-elements)
-    - [Reduced Boilerplate](#reduced-boilerplate)
-    - [Input Groups](#input-groups)
-    - [Automatic Validation State](#automatic-validation-state)
-    - [Horizontal Forms](#horizontal-forms)
-    - [Additional Tips](#additional-tips)
-- [Related Resources](#related-resources)
+-   [Installation](#installing-with-composer)
+-   [Using BootForms](#using-bootforms)
+    -   [Basic Usage](#basic-usage)
+    -   [Customizing Elements](#customizing-elements)
+    -   [Reduced Boilerplate](#reduced-boilerplate)
+    -   [Input Groups](#input-groups)
+    -   [Automatic Validation State](#automatic-validation-state)
+    -   [Horizontal Forms](#horizontal-forms)
+    -   [Additional Tips](#additional-tips)
+-   [Related Resources](#related-resources)
 
 ## Installing with Composer
 
@@ -81,8 +80,8 @@ BootForms lets you create a label and form control and wrap it all in a form gro
 
 ```php
 //  <form method="post">
-//    <div class="form-group">
-//      <label for="field_name">Field Label</label>
+//    <div class="mb-3">
+//      <label for="field_name" class="form-label">Field Label</label>
 //      <input type="text" class="form-control" id="field_name" name="field_name">
 //    </div>
 //  </form>
@@ -100,15 +99,15 @@ If you need to customize your form elements in any way (such as adding a default
 Attributes can be added either via the `attribute` method, or by simply using the attribute name as the method name.
 
 ```php
-// <div class="form-group">
-//    <label for="first_name">First Name</label>
+// <div class="mb-3">
+//    <label for="first_name" class="form-label">First Name</label>
 //    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="John Doe">
 // </div>
 BootForm::text('First Name', 'first_name')->placeholder('John Doe');
 
-// <div class="form-group">
-//   <label for="color">Color</label>
-//   <select class="form-control" id="color" name="color">
+// <div class="mb-3">
+//   <label for="color" class="form-label">Color</label>
+//   <select class="form-select" id="color" name="color">
 //     <option value="red">Red</option>
 //     <option value="green" selected>Green</option>
 //   </select>
@@ -118,8 +117,8 @@ BootForm::select('Color', 'color')->options(['red' => 'Red', 'green' => 'Green']
 // <form method="GET" action="/users">
 BootForm::open()->get()->action('/users');
 
-// <div class="form-group">
-//    <label for="first_name">First Name</label>
+// <div class="mb-3">
+//    <label for="first_name" class="form-label">First Name</label>
 //    <input type="text" class="form-control" id="first_name" name="first_name" value="John Doe">
 // </div>
 BootForm::text('First Name', 'first_name')->defaultValue('John Doe');
@@ -133,27 +132,27 @@ Typical Bootstrap form boilerplate might look something like this:
 
 ```html
 <form>
-  <div class="form-group">
-    <label for="first_name">First Name</label>
-    <input type="text" class="form-control" name="first_name" id="first_name">
-  </div>
-  <div class="form-group">
-    <label for="last_name">Last Name</label>
-    <input type="text" class="form-control" name="last_name" id="last_name">
-  </div>
-  <div class="form-group">
-    <label for="date_of_birth">Date of Birth</label>
-    <input type="date" class="form-control" name="date_of_birth" id="date_of_birth">
-  </div>
-  <div class="form-group">
-    <label for="email">Email address</label>
-    <input type="email" class="form-control" name="email" id="email">
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" name="password" id="password">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="mb-3">
+        <label for="first_name" class="form-label">First Name</label>
+        <input type="text" class="form-control" name="first_name" id="first_name" />
+    </div>
+    <div class="mb-3">
+        <label for="last_name" class="form-label">Last Name</label>
+        <input type="text" class="form-control" name="last_name" id="last_name" />
+    </div>
+    <div class="mb-3">
+        <label for="date_of_birth" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" name="date_of_birth" id="date_of_birth" />
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" name="email" id="email" />
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" id="password" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 ```
 
@@ -175,12 +174,10 @@ BootForms makes a few decisions for you and allows you to pare it down a bit mor
 Bootforms allows you to create input groups.
 
 ```php
-//  <div class="form-group">
-//      <label for="amount">Amount</label>
+//  <div class="mb-3">
+//      <label for="amount" class="form-label">Amount</label>
 //      <div class="input-group">
-//          <span class="input-group-prepend">
-//              <span class="input-group-text">$</span>
-//          </span>
+//          <span class="input-group-text">$</span>
 //          <input type="number" name="amount" id="amount" class="form-control">
 //      </div>
 //  </div>
@@ -190,13 +187,11 @@ Bootforms allows you to create input groups.
 With a button appended.
 
 ```php
-//  <div class="form-group">
+//  <div class="mb-3">
 //      <label for="email">Email</label>
 //      <div class="input-group">
 //          <input type="text" name="email" id="email" class="form-control">
-//          <span class="input-group-append">
-//              <button type="submit" class="btn btn-primary">OK</button>
-//          </span>
+//          <button type="submit" class="btn btn-primary">OK</button>
 //      </div>
 //  </div>
 {!! BootForm::inputGroup('Email', 'email')->afterAddon(BootForm::submit('OK')) !!}
@@ -209,8 +204,8 @@ Another nice thing about BootForms is that it will automatically add error state
 Essentially, this takes code that would normally look like this:
 
 ```php
-<div class="form-group">
-  <label for="first_name">First Name</label>
+<div class="mb-3">
+  <label for="first_name" class="form-label">First Name</label>
   <input type="text" class="form-control {!! $errors->has('first_name') ? 'is-invalid' : '' !!}" id="first_name">
   {!! $errors->first('first_name', '<div class="invalid-feedback">:message</div>') !!}
 </div>
@@ -257,7 +252,7 @@ You can hide labels by chaining the `hideLabel()` helper off of any element defi
 BootForm::text('First Name', 'first_name')->hideLabel()
 ```
 
-The label will still be generated in the markup, but hidden using Bootstrap’s `.sr-only` class, so you don’t reduce the accessibility of your form.
+The label will still be generated in the markup, but hidden using Bootstrap’s `.visually-hidden` class, so you don’t reduce the accessibility of your form.
 
 #### Form Text
 
@@ -276,7 +271,3 @@ BootForm::open()->action(route('users.update', $user))->put()
 BootForm::bind($user)
 BootForm::close()
 ```
-
-## Related Resources
-
-- [Laravel Translatable BootForms](https://github.com/Propaganistas/Laravel-Translatable-Bootforms), integrates BootForms with Dimsav’s [Laravel Translatable](https://github.com/dimsav/laravel-translatable) package
