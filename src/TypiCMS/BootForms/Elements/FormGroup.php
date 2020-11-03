@@ -19,7 +19,7 @@ class FormGroup extends Element
     {
         $this->label = $label;
         $this->control = $control;
-        $this->addClass('form-group');
+        $this->addClass('mb-3');
     }
 
     public function render()
