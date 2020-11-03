@@ -38,7 +38,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
             ->addClass('col-form-label')
             ->forId($name);
 
-        $control->id($name)->addClass('form-control');
+        $control->id($name);
 
         $formGroup = new HorizontalFormGroup($label, $control, $this->getControlSizes());
 

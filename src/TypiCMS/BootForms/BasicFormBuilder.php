@@ -189,8 +189,9 @@ class BasicFormBuilder
     {
         $control = new InputGroup($name);
         if (!is_null($value) || !is_null($value = $this->getValueFor($name))) {
-            $control->value($value)->addClass('form-control');
+            $control->value($value);
         }
+        $control->addClass('form-control');
 
         return $this->formGroup($label, $name, $control);
     }
