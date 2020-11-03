@@ -20,7 +20,7 @@ class BasicFormBuilder
     protected function formGroup($label, $name, $control)
     {
         $label = $this->builder->label($label)->forId($name);
-        $control->id($name)->addClass('form-control');
+        $control->id($name);
 
         $formGroup = new FormGroup($label, $control);
 
@@ -39,14 +39,14 @@ class BasicFormBuilder
 
     public function text($label, $name, $value = null)
     {
-        $control = $this->builder->text($name)->value($value);
+        $control = $this->builder->text($name)->value($value)->addClass('form-control');
 
         return $this->formGroup($label, $name, $control);
     }
 
     public function password($label, $name)
     {
-        $control = $this->builder->password($name);
+        $control = $this->builder->password($name)->addClass('form-control');
 
         return $this->formGroup($label, $name, $control);
     }
@@ -63,7 +63,7 @@ class BasicFormBuilder
 
     public function select($label, $name, $options = [])
     {
-        $control = $this->builder->select($name, $options);
+        $control = $this->builder->select($name, $options)->addClass('form-select');
 
         return $this->formGroup($label, $name, $control);
     }
@@ -143,28 +143,28 @@ class BasicFormBuilder
 
     public function textarea($label, $name)
     {
-        $control = $this->builder->textarea($name);
+        $control = $this->builder->textarea($name)->addClass('form-control');
 
         return $this->formGroup($label, $name, $control);
     }
 
     public function date($label, $name, $value = null)
     {
-        $control = $this->builder->date($name)->value($value);
+        $control = $this->builder->date($name)->value($value)->addClass('form-control');
 
         return $this->formGroup($label, $name, $control);
     }
 
     public function dateTimeLocal($label, $name, $value = null)
     {
-        $control = $this->builder->dateTimeLocal($name)->value($value);
+        $control = $this->builder->dateTimeLocal($name)->value($value)->addClass('form-control');
 
         return $this->formGroup($label, $name, $control);
     }
 
     public function email($label, $name, $value = null)
     {
-        $control = $this->builder->email($name)->value($value);
+        $control = $this->builder->email($name)->value($value)->addClass('form-control');
 
         return $this->formGroup($label, $name, $control);
     }
@@ -189,7 +189,7 @@ class BasicFormBuilder
     {
         $control = new InputGroup($name);
         if (!is_null($value) || !is_null($value = $this->getValueFor($name))) {
-            $control->value($value);
+            $control->value($value)->addClass('form-control');
         }
 
         return $this->formGroup($label, $name, $control);
@@ -197,7 +197,7 @@ class BasicFormBuilder
 
     public function number($label, $name, $value = null)
     {
-        $control = $this->builder->number($name)->value($value);
+        $control = $this->builder->number($name)->value($value)->addClass('form-control');
 
         return $this->formGroup($label, $name, $control);
     }
