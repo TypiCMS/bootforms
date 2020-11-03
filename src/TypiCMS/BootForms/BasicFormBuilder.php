@@ -127,7 +127,7 @@ class BasicFormBuilder
 
     protected function buildRadioGroup($label, $name, $control)
     {
-        $id = $name.'_'.strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', $control->getAttribute('value'))));
+        $id = $name.'_'.mb_strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', $control->getAttribute('value'))));
         $label = $this->builder->label($label, $name)->addClass('form-check-label')->forId($id);
         $control->id($id)->addClass('form-check-input');
 
