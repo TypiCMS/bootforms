@@ -63,7 +63,7 @@ class GroupWrapper
 
     public function hideLabel()
     {
-        $this->labelClass('sr-only');
+        $this->labelClass('visually-hidden');
 
         return $this;
     }
