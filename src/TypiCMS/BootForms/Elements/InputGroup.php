@@ -36,9 +36,7 @@ class InputGroup extends Text
         $html = '';
 
         foreach ($addons as $addon) {
-            $html .= sprintf('<span class="input-group-%s">', $class);
             $html .= $addon;
-            $html .= '</span>';
         }
 
         return $html;
