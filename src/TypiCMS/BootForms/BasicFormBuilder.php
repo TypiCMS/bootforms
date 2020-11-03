@@ -173,7 +173,7 @@ class BasicFormBuilder
     {
         $control = $this->builder->file($name)->value($value);
         $label = $this->builder->label($label, $name)->forId($name);
-        $control->id($name)->addClass('form-control-file');
+        $control->id($name)->addClass('form-control');
 
         $formGroup = new FormGroup($label, $control);
 
