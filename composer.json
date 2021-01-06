@@ -1,6 +1,6 @@
 {
     "name": "typicms/bootforms",
-    "description": "Just a Formbuilder with some Bootstrap 4 specific conveniences. Remembers old input, retrieves error messages and handles all your boilerplate Bootstrap markup automatically.",
+    "description": "Just a Formbuilder with some Bootstrap 5 specific conveniences. Remembers old input, retrieves error messages and handles all your boilerplate Bootstrap markup automatically.",
     "authors": [
         {
             "name": "Adam Wathan",
