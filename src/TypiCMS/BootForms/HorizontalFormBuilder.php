@@ -38,7 +38,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
         return $this->builder->open();
     }
 
-    protected function formGroup(string $label, string $name, $control): GroupWrapper
+    protected function formGroup(string $label, string $name, mixed $control): GroupWrapper
     {
         $label = $this->builder->label($label)
             ->addClass($this->getLabelClass())
@@ -99,7 +99,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
         return new OffsetFormGroup($this->wrap($checkGroup), $this->columnSizes);
     }
 
-    protected function checkGroup(string $label, string $name, $control): CheckGroup
+    protected function checkGroup(string $label, string $name, mixed $control): CheckGroup
     {
         $label = $this->builder->label($label)->addClass('form-check-label')->forId($name);
         $control->id($name)->addClass('form-check-input');

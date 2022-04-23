@@ -5,7 +5,7 @@ namespace TypiCMS\BootForms\Elements;
 class OffsetFormGroup
 {
     /**
-     * @var string
+     * @var mixed
      */
     protected $control;
 
@@ -14,7 +14,7 @@ class OffsetFormGroup
      */
     protected $columnSizes;
 
-    public function __construct(string $control, array $columnSizes)
+    public function __construct(mixed $control, array $columnSizes)
     {
         $this->control = $control;
         $this->columnSizes = $columnSizes;

@@ -23,7 +23,7 @@ class BasicFormBuilder
         $this->builder = $builder;
     }
 
-    protected function formGroup(string $label, string $name, $control): GroupWrapper
+    protected function formGroup(string $label, string $name, mixed $control): GroupWrapper
     {
         $label = $this->builder->label($label)->forId($name);
         $control->id($name);
@@ -86,14 +86,14 @@ class BasicFormBuilder
         return $this->checkbox($label, $name)->inline();
     }
 
-    protected function checkGroup(string $label, string $name, $control): GroupWrapper|CheckGroup
+    protected function checkGroup(string $label, string $name, mixed $control): GroupWrapper|CheckGroup
     {
         $checkGroup = $this->buildCheckGroup($label, $name, $control);
 
         return $this->wrap($checkGroup);
     }
 
-    protected function buildCheckGroup(string $label, string $name, $control): CheckGroup
+    protected function buildCheckGroup(string $label, string $name, mixed $control): CheckGroup
     {
         $label = $this->builder->label($label)->addClass('form-check-label')->forId($name);
         $control->id($name)->addClass('form-check-input');
@@ -124,14 +124,14 @@ class BasicFormBuilder
         return $this->radio($label, $name, $value)->inline();
     }
 
-    protected function radioGroup(string $label, string $name, $control): GroupWrapper
+    protected function radioGroup(string $label, string $name, mixed $control): GroupWrapper
     {
         $checkGroup = $this->buildRadioGroup($label, $name, $control);
 
         return $this->wrap($checkGroup);
     }
 
-    protected function buildRadioGroup(string $label, string $name, $control): CheckGroup
+    protected function buildRadioGroup(string $label, string $name, mixed $control): CheckGroup
     {
         $id = $name.'_'.mb_strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', $control->getAttribute('value'))));
         $label = $this->builder->label($label)->addClass('form-check-label')->forId($id);
