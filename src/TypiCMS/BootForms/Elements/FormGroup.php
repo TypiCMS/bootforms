@@ -7,12 +7,24 @@ use TypiCMS\Form\Elements\Label;
 
 class FormGroup extends Element
 {
+    /**
+     * @var Label
+     */
     protected $label;
 
+    /**
+     * @var \TypiCMS\Form\Elements\Element
+     */
     protected $control;
 
+    /**
+     * @var ?FormText
+     */
     protected $formText;
 
+    /**
+     * @var ?InvalidFeedback
+     */
     protected $invalidFeedback;
 
     public function __construct(Label $label, Element $control)
@@ -23,7 +35,7 @@ class FormGroup extends Element
         $this->addClass('mb-3');
     }
 
-    public function render()
+    public function render(): string
     {
         $html = '<div';
         $html .= $this->renderAttributes();
@@ -37,17 +49,17 @@ class FormGroup extends Element
         return $html;
     }
 
-    public function formText($text)
+    public function formText(string $text): ?self
     {
         if (isset($this->formText)) {
-            return;
+            return null;
         }
         $this->formText = new FormText($text);
 
         return $this;
     }
 
-    protected function renderFormText()
+    protected function renderFormText(): string
     {
         if ($this->formText) {
             return $this->formText->render();
@@ -56,17 +68,17 @@ class FormGroup extends Element
         return '';
     }
 
-    public function invalidFeedback($text)
+    public function invalidFeedback($text): ?self
     {
         if (isset($this->invalidFeedback)) {
-            return;
+            return null;
         }
         $this->invalidFeedback = new InvalidFeedback($text);
 
         return $this;
     }
 
-    protected function renderInvalidFeedback()
+    protected function renderInvalidFeedback(): string
     {
         if ($this->invalidFeedback) {
             return $this->invalidFeedback->render();
@@ -75,17 +87,17 @@ class FormGroup extends Element
         return '';
     }
 
-    public function control()
+    public function control(): Element
     {
         return $this->control;
     }
 
-    public function label()
+    public function label(): Label
     {
         return $this->label;
     }
 
-    public function __call($method, $parameters)
+    public function __call($method, $parameters): self
     {
         call_user_func_array([$this->control, $method], $parameters);
 

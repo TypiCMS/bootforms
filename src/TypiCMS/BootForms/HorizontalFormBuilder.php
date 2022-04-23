@@ -3,14 +3,21 @@
 namespace TypiCMS\BootForms;
 
 use TypiCMS\BootForms\Elements\CheckGroup;
+use TypiCMS\BootForms\Elements\GroupWrapper;
 use TypiCMS\BootForms\Elements\HorizontalFormGroup;
 use TypiCMS\BootForms\Elements\OffsetFormGroup;
 use TypiCMS\Form\FormBuilder;
 
 class HorizontalFormBuilder extends BasicFormBuilder
 {
+    /**
+     * @var array
+     */
     protected $columnSizes;
 
+    /**
+     * @var FormBuilder
+     */
     protected $builder;
 
     public function __construct(FormBuilder $builder, $columnSizes = ['lg' => [2, 10]])
@@ -19,7 +26,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
         $this->columnSizes = $columnSizes;
     }
 
-    public function setColumnSizes($columnSizes)
+    public function setColumnSizes(array $columnSizes): self
     {
         $this->columnSizes = $columnSizes;
 
@@ -31,9 +38,9 @@ class HorizontalFormBuilder extends BasicFormBuilder
         return $this->builder->open();
     }
 
-    protected function formGroup($label, $name, $control)
+    protected function formGroup(string $label, string $name, $control): GroupWrapper
     {
-        $label = $this->builder->label($label, $name)
+        $label = $this->builder->label($label)
             ->addClass($this->getLabelClass())
             ->addClass('col-form-label')
             ->forId($name);
@@ -50,7 +57,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
         return $this->wrap($formGroup);
     }
 
-    protected function getControlSizes()
+    protected function getControlSizes(): array
     {
         $controlSizes = [];
         foreach ($this->columnSizes as $breakpoint => $sizes) {
@@ -60,7 +67,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
         return $controlSizes;
     }
 
-    protected function getLabelClass()
+    protected function getLabelClass(): string
     {
         $class = '';
         foreach ($this->columnSizes as $breakpoint => $sizes) {
@@ -70,21 +77,21 @@ class HorizontalFormBuilder extends BasicFormBuilder
         return trim($class);
     }
 
-    public function button($value, $name = null, $type = 'btn-secondary')
+    public function button(string $value, ?string $name = null, string $type = 'btn-secondary'): OffsetFormGroup
     {
         $button = $this->builder->button($value, $name)->addClass('btn')->addClass($type);
 
         return new OffsetFormGroup($button, $this->columnSizes);
     }
 
-    public function submit($value = 'Submit', $type = 'btn-primary')
+    public function submit(string $value = 'Submit', string $type = 'btn-primary'): OffsetFormGroup
     {
         $button = $this->builder->submit($value)->addClass('btn')->addClass($type);
 
         return new OffsetFormGroup($button, $this->columnSizes);
     }
 
-    public function checkbox($label, $name)
+    public function checkbox(string $label, string $name): OffsetFormGroup
     {
         $control = $this->builder->checkbox($name);
         $checkGroup = $this->checkGroup($label, $name, $control);
@@ -92,9 +99,9 @@ class HorizontalFormBuilder extends BasicFormBuilder
         return new OffsetFormGroup($this->wrap($checkGroup), $this->columnSizes);
     }
 
-    protected function checkGroup($label, $name, $control)
+    protected function checkGroup(string $label, string $name, $control): CheckGroup
     {
-        $label = $this->builder->label($label, $name)->addClass('form-check-label')->forId($name);
+        $label = $this->builder->label($label)->addClass('form-check-label')->forId($name);
         $control->id($name)->addClass('form-check-input');
 
         $checkGroup = new CheckGroup($label, $control);
@@ -107,7 +114,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
         return $checkGroup;
     }
 
-    public function radio($label, $name, $value = null)
+    public function radio(string $label, string $name, $value = null): OffsetFormGroup
     {
         if (is_null($value)) {
             $value = $label;
@@ -119,10 +126,10 @@ class HorizontalFormBuilder extends BasicFormBuilder
         return new OffsetFormGroup($this->wrap($checkGroup), $this->columnSizes);
     }
 
-    public function file($label, $name, $value = null)
+    public function file(string $label, string $name, ?string $value = null): HorizontalFormGroup
     {
         $control = $this->builder->file($name)->value($value);
-        $label = $this->builder->label($label, $name)
+        $label = $this->builder->label($label)
             ->addClass($this->getLabelClass())
             ->addClass('col-form-label')
             ->forId($name);

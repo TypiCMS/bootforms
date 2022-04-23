@@ -9,6 +9,11 @@ class CheckGroup extends FormGroup
 {
     protected $label;
 
+    /**
+     * BootForm implementation.
+     *
+     * @var \TypiCMS\Form\Elements\Element
+     */
     protected $control;
 
     public function __construct(Label $label, Element $control)
@@ -18,7 +23,7 @@ class CheckGroup extends FormGroup
         $this->addClass('form-check');
     }
 
-    public function render()
+    public function render(): string
     {
         $html = '<div';
         $html .= $this->renderAttributes();
@@ -32,19 +37,19 @@ class CheckGroup extends FormGroup
         return $html;
     }
 
-    public function inline()
+    public function inline(): self
     {
         $this->addClass('form-check-inline');
 
         return $this;
     }
 
-    public function control()
+    public function control(): Element
     {
         return $this->control;
     }
 
-    public function __call($method, $parameters)
+    public function __call($method, $parameters): self
     {
         call_user_func_array([$this->control, $method], $parameters);
 

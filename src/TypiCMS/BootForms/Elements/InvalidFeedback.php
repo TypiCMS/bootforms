@@ -6,6 +6,9 @@ use TypiCMS\Form\Elements\Element;
 
 class InvalidFeedback extends Element
 {
+    /**
+     * @var string
+     */
     private $message;
 
     public function __construct($message)
@@ -14,7 +17,7 @@ class InvalidFeedback extends Element
         $this->addClass('invalid-feedback');
     }
 
-    public function render()
+    public function render(): string
     {
         $html = '<div';
         $html .= $this->renderAttributes();

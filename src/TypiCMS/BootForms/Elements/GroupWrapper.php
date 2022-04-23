@@ -2,73 +2,77 @@
 
 namespace TypiCMS\BootForms\Elements;
 
-use TypiCMS\Form\Elements\Label;
-
 class GroupWrapper
 {
+    /**
+     * @var FormGroup
+     */
     protected $formGroup;
 
+    /**
+     * @var \TypiCMS\Form\Elements\Element
+     */
     protected $target;
 
-    public function __construct($formGroup)
+    public function __construct(FormGroup $formGroup)
     {
         $this->formGroup = $formGroup;
         $this->target = $formGroup->control();
     }
 
-    public function render()
+    public function render(): string
     {
         return $this->formGroup->render();
     }
 
-    public function formText($text)
+    public function formText($text): self
     {
         $this->formGroup->formText($text);
 
         return $this;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->render();
     }
 
-    public function addGroupClass($class)
+    public function addGroupClass($class): self
     {
         $this->formGroup->addClass($class);
 
         return $this;
     }
 
-    public function removeGroupClass($class)
+    public function removeGroupClass($class): self
     {
         $this->formGroup->removeClass($class);
 
         return $this;
     }
 
-    public function groupData($attribute, $value)
+    public function groupData($attribute, $value): self
     {
         $this->formGroup->data($attribute, $value);
 
         return $this;
     }
 
-    public function labelClass($class)
+    public function labelClass($class): self
     {
         $this->formGroup->label()->addClass($class);
 
         return $this;
     }
 
-    public function hideLabel()
+    public function hideLabel(): self
     {
         $this->labelClass('visually-hidden');
 
         return $this;
     }
 
-    public function required($conditional = true)
+    public function required($conditional = true): self
     {
         if ($conditional) {
             $this->formGroup->label()->addClass('form-label-required');
@@ -79,35 +83,35 @@ class GroupWrapper
         return $this;
     }
 
-    public function inline()
+    public function inline(): self
     {
         $this->formGroup->inline();
 
         return $this;
     }
 
-    public function group()
+    public function group(): self
     {
         $this->target = $this->formGroup;
 
         return $this;
     }
 
-    public function label()
+    public function label(): self
     {
         $this->target = $this->formGroup->label();
 
         return $this;
     }
 
-    public function control()
+    public function control(): self
     {
         $this->target = $this->formGroup->control();
 
         return $this;
     }
 
-    public function __call($method, $parameters)
+    public function __call($method, $parameters): self
     {
         call_user_func_array([$this->target, $method], $parameters);
 

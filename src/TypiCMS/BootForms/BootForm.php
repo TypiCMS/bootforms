@@ -2,12 +2,20 @@
 
 namespace TypiCMS\BootForms;
 
+use TypiCMS\Form\Elements\FormOpen;
+
 class BootForm
 {
     protected $builder;
 
+    /**
+     * @var BasicFormBuilder
+     */
     protected $basicFormBuilder;
 
+    /**
+     * @var HorizontalFormBuilder
+     */
     protected $horizontalFormBuilder;
 
     public function __construct(BasicFormBuilder $basicFormBuilder, HorizontalFormBuilder $horizontalFormBuilder)
@@ -16,14 +24,14 @@ class BootForm
         $this->horizontalFormBuilder = $horizontalFormBuilder;
     }
 
-    public function open()
+    public function open(): FormOpen
     {
         $this->builder = $this->basicFormBuilder;
 
         return $this->builder->open();
     }
 
-    public function openHorizontal($columnSizes)
+    public function openHorizontal(array $columnSizes): FormOpen
     {
         $this->horizontalFormBuilder->setColumnSizes($columnSizes);
         $this->builder = $this->horizontalFormBuilder;

@@ -6,32 +6,38 @@ use TypiCMS\Form\Elements\Text;
 
 class InputGroup extends Text
 {
+    /**
+     * @var array
+     */
     protected $beforeAddon = [];
 
+    /**
+     * @var array
+     */
     protected $afterAddon = [];
 
-    public function beforeAddon($addon)
+    public function beforeAddon($addon): self
     {
         $this->beforeAddon[] = $addon;
 
         return $this;
     }
 
-    public function afterAddon($addon)
+    public function afterAddon($addon): self
     {
         $this->afterAddon[] = $addon;
 
         return $this;
     }
 
-    public function type($type)
+    public function type($type): self
     {
         $this->attributes['type'] = $type;
 
         return $this;
     }
 
-    protected function renderAddons($addons, $class)
+    protected function renderAddons($addons, $class): string
     {
         $html = '';
 
@@ -42,7 +48,7 @@ class InputGroup extends Text
         return $html;
     }
 
-    public function render()
+    public function render(): string
     {
         $html = '<div class="input-group">';
         $html .= $this->renderAddons($this->beforeAddon, 'prepend');

@@ -14,13 +14,13 @@ class BasicFormBuilderTest extends TestCase
 
     private $builder;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->builder = new FormBuilder();
         $this->form = new BasicFormBuilder($this->builder);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

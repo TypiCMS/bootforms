@@ -3,9 +3,13 @@
 use PHPUnit\Framework\TestCase;
 use TypiCMS\BootForms\Elements\InvalidFeedback;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class InvalidFeedbackTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
     }
 

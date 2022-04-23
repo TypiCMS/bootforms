@@ -4,17 +4,23 @@ namespace TypiCMS\BootForms\Elements;
 
 class OffsetFormGroup
 {
+    /**
+     * @var string
+     */
     protected $control;
 
+    /**
+     * @var array
+     */
     protected $columnSizes;
 
-    public function __construct($control, $columnSizes)
+    public function __construct(string $control, array $columnSizes)
     {
         $this->control = $control;
         $this->columnSizes = $columnSizes;
     }
 
-    public function render()
+    public function render(): string
     {
         $html = '<div class="mb-3 row">';
         $html .= '<div class="'.$this->getControlClass().'">';
@@ -26,14 +32,14 @@ class OffsetFormGroup
         return $html;
     }
 
-    public function setColumnSizes($columnSizes)
+    public function setColumnSizes(array $columnSizes): self
     {
         $this->columnSizes = $columnSizes;
 
         return $this;
     }
 
-    protected function getControlClass()
+    protected function getControlClass(): string
     {
         $class = '';
         foreach ($this->columnSizes as $breakpoint => $sizes) {
@@ -43,12 +49,12 @@ class OffsetFormGroup
         return trim($class);
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->render();
     }
 
-    public function __call($method, $parameters)
+    public function __call($method, $parameters): self
     {
         call_user_func_array([$this->control, $method], $parameters);
 

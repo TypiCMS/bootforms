@@ -3,9 +3,13 @@
 use PHPUnit\Framework\TestCase;
 use TypiCMS\BootForms\Elements\FormText;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class FormTextTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
     }
 

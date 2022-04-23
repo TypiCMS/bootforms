@@ -6,6 +6,9 @@ use TypiCMS\Form\Elements\Element;
 
 class FormText extends Element
 {
+    /**
+     * @var string
+     */
     private $message;
 
     public function __construct($message)
@@ -14,7 +17,7 @@ class FormText extends Element
         $this->addClass('form-text');
     }
 
-    public function render()
+    public function render(): string
     {
         $html = '<small';
         $html .= $this->renderAttributes();

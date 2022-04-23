@@ -14,13 +14,13 @@ class HorizontalFormBuilderTest extends TestCase
 
     private $builder;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->builder = new FormBuilder();
         $this->form = new HorizontalFormBuilder($this->builder);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

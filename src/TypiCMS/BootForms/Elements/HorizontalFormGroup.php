@@ -7,16 +7,19 @@ use TypiCMS\Form\Elements\Label;
 
 class HorizontalFormGroup extends FormGroup
 {
+    /**
+     * @var array
+     */
     protected $controlSizes;
 
-    public function __construct(Label $label, Element $control, $controlSizes)
+    public function __construct(Label $label, Element $control, array $controlSizes)
     {
         parent::__construct($label, $control);
         $this->controlSizes = $controlSizes;
         $this->addClass('row');
     }
 
-    public function render()
+    public function render(): string
     {
         $html = '<div';
         $html .= $this->renderAttributes();
@@ -33,7 +36,7 @@ class HorizontalFormGroup extends FormGroup
         return $html;
     }
 
-    protected function getControlClass()
+    protected function getControlClass(): string
     {
         $class = '';
         foreach ($this->controlSizes as $breakpoint => $size) {
@@ -43,7 +46,7 @@ class HorizontalFormGroup extends FormGroup
         return trim($class);
     }
 
-    public function __call($method, $parameters)
+    public function __call($method, $parameters): self
     {
         call_user_func_array([$this->control, $method], $parameters);
 
