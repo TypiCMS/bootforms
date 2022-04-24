@@ -38,7 +38,7 @@ class BasicFormBuilder
         return $this->wrap($formGroup);
     }
 
-    protected function wrap($group): GroupWrapper
+    protected function wrap(FormGroup $group): GroupWrapper
     {
         return new GroupWrapper($group);
     }

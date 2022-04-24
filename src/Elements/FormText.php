@@ -11,7 +11,7 @@ class FormText extends Element
      */
     private $message;
 
-    public function __construct($message)
+    public function __construct(string $message)
     {
         $this->message = $message;
         $this->addClass('form-text');

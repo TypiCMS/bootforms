@@ -68,7 +68,7 @@ class FormGroup extends Element
         return '';
     }
 
-    public function invalidFeedback($text): ?self
+    public function invalidFeedback(string $text): ?self
     {
         if (isset($this->invalidFeedback)) {
             return null;

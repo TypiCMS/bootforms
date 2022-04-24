@@ -1,5 +1,8 @@
 <?php
 
+namespace TypiCMS\BootForms\Tests;
+
+use Mockery;
 use PHPUnit\Framework\TestCase;
 use TypiCMS\BootForms\HorizontalFormBuilder;
 use TypiCMS\Form\FormBuilder;

@@ -6,6 +6,7 @@ use TypiCMS\BootForms\Elements\CheckGroup;
 use TypiCMS\BootForms\Elements\GroupWrapper;
 use TypiCMS\BootForms\Elements\HorizontalFormGroup;
 use TypiCMS\BootForms\Elements\OffsetFormGroup;
+use TypiCMS\Form\Elements\FormOpen;
 use TypiCMS\Form\FormBuilder;
 
 class HorizontalFormBuilder extends BasicFormBuilder
@@ -33,7 +34,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
         return $this;
     }
 
-    public function open()
+    public function open(): FormOpen
     {
         return $this->builder->open();
     }
@@ -114,7 +115,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
         return $checkGroup;
     }
 
-    public function radio(string $label, string $name, $value = null): OffsetFormGroup
+    public function radio(string $label, string $name, int|string $value = null): OffsetFormGroup
     {
         if (is_null($value)) {
             $value = $label;

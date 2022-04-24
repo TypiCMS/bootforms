@@ -6,6 +6,9 @@ use TypiCMS\Form\Elements\FormOpen;
 
 class BootForm
 {
+    /**
+     * @var BasicFormBuilder
+     */
     protected $builder;
 
     /**

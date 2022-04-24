@@ -23,21 +23,21 @@ class BootFormsServiceProvider extends ServiceProvider implements DeferrableProv
         $this->registerBootForm();
     }
 
-    protected function registerErrorStore()
+    protected function registerErrorStore(): void
     {
         $this->app->singleton('typicms.form.errorstore', function ($app) {
             return new IlluminateErrorStore($app['session.store']);
         });
     }
 
-    protected function registerOldInput()
+    protected function registerOldInput(): void
     {
         $this->app->singleton('typicms.form.oldinput', function ($app) {
             return new IlluminateOldInputProvider($app['session.store']);
         });
     }
 
-    protected function registerFormBuilder()
+    protected function registerFormBuilder(): void
     {
         $this->app->singleton('typicms.form', function ($app) {
             $formBuilder = new FormBuilder();
@@ -49,21 +49,21 @@ class BootFormsServiceProvider extends ServiceProvider implements DeferrableProv
         });
     }
 
-    protected function registerBasicFormBuilder()
+    protected function registerBasicFormBuilder(): void
     {
         $this->app->singleton('typicms.bootform.basic', function ($app) {
             return new BasicFormBuilder($app['typicms.form']);
         });
     }
 
-    protected function registerHorizontalFormBuilder()
+    protected function registerHorizontalFormBuilder(): void
     {
         $this->app->singleton('typicms.bootform.horizontal', function ($app) {
             return new HorizontalFormBuilder($app['typicms.form']);
         });
     }
 
-    protected function registerBootForm()
+    protected function registerBootForm(): void
     {
         $this->app->singleton('typicms.bootform', function ($app) {
             return new BootForm($app['typicms.bootform.basic'], $app['typicms.bootform.horizontal']);
@@ -72,10 +72,8 @@ class BootFormsServiceProvider extends ServiceProvider implements DeferrableProv
 
     /**
      * Get the services provided by the provider.
-     *
-     * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return ['typicms.bootform'];
     }

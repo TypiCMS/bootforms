@@ -51,7 +51,7 @@ class GroupWrapper
         return $this;
     }
 
-    public function groupData($attribute, string $value): self
+    public function groupData(string $attribute, string $value): self
     {
         $this->formGroup->data($attribute, $value);
 
@@ -72,7 +72,7 @@ class GroupWrapper
         return $this;
     }
 
-    public function required($conditional = true): self
+    public function required(bool $conditional = true): self
     {
         if ($conditional) {
             $this->formGroup->label()->addClass('form-label-required');

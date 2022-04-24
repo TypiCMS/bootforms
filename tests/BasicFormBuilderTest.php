@@ -1,6 +1,10 @@
 <?php
 
+namespace TypiCMS\BootForms\Tests;
+
+use Mockery;
 use PHPUnit\Framework\TestCase;
+use stdClass;
 use TypiCMS\BootForms\BasicFormBuilder;
 use TypiCMS\Form\FormBuilder;
 

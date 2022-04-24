@@ -1,5 +1,7 @@
 <?php
 
+namespace TypiCMS\BootForms\Tests;
+
 use PHPUnit\Framework\TestCase;
 use TypiCMS\BootForms\Elements\InputGroup;
 
