@@ -25,7 +25,7 @@ class GroupWrapper
         return $this->formGroup->render();
     }
 
-    public function formText($text): self
+    public function formText(string $text): self
     {
         $this->formGroup->formText($text);
 
@@ -37,28 +37,28 @@ class GroupWrapper
         return $this->render();
     }
 
-    public function addGroupClass($class): self
+    public function addGroupClass(string $class): self
     {
         $this->formGroup->addClass($class);
 
         return $this;
     }
 
-    public function removeGroupClass($class): self
+    public function removeGroupClass(string $class): self
     {
         $this->formGroup->removeClass($class);
 
         return $this;
     }
 
-    public function groupData($attribute, $value): self
+    public function groupData($attribute, string $value): self
     {
         $this->formGroup->data($attribute, $value);
 
         return $this;
     }
 
-    public function labelClass($class): self
+    public function labelClass(string $class): self
     {
         $this->formGroup->label()->addClass($class);
 

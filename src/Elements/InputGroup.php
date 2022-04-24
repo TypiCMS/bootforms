@@ -16,28 +16,28 @@ class InputGroup extends Text
      */
     protected $afterAddon = [];
 
-    public function beforeAddon($addon): self
+    public function beforeAddon(string $addon): self
     {
         $this->beforeAddon[] = $addon;
 
         return $this;
     }
 
-    public function afterAddon($addon): self
+    public function afterAddon(string $addon): self
     {
         $this->afterAddon[] = $addon;
 
         return $this;
     }
 
-    public function type($type): self
+    public function type(string $type): self
     {
         $this->attributes['type'] = $type;
 
         return $this;
     }
 
-    protected function renderAddons($addons, $class): string
+    protected function renderAddons(array $addons, string $class): string
     {
         $html = '';
 

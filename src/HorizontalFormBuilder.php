@@ -20,7 +20,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
      */
     protected $builder;
 
-    public function __construct(FormBuilder $builder, $columnSizes = ['lg' => [2, 10]])
+    public function __construct(FormBuilder $builder, array $columnSizes = ['lg' => [2, 10]])
     {
         $this->builder = $builder;
         $this->columnSizes = $columnSizes;

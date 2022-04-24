@@ -8,7 +8,7 @@ use TypiCMS\BootForms\Elements\GroupWrapper;
 use TypiCMS\BootForms\Elements\HorizontalFormGroup;
 use TypiCMS\BootForms\Elements\InputGroup;
 use TypiCMS\BootForms\Elements\OffsetFormGroup;
-use TypiCMS\Form\Elements\Button;
+use TypiCMS\Form\Elements\Element;
 use TypiCMS\Form\FormBuilder;
 
 class BasicFormBuilder
@@ -57,12 +57,12 @@ class BasicFormBuilder
         return $this->formGroup($label, $name, $control);
     }
 
-    public function button(string $value, ?string $name = null, string $type = 'btn-secondary'): Button|OffsetFormGroup
+    public function button(string $value, ?string $name = null, string $type = 'btn-secondary'): Element|OffsetFormGroup
     {
         return $this->builder->button($value, $name)->addClass('btn')->addClass($type);
     }
 
-    public function submit(string $value = 'Submit', string $type = 'btn-primary'): Button|OffsetFormGroup
+    public function submit(string $value = 'Submit', string $type = 'btn-primary'): Element|OffsetFormGroup
     {
         return $this->builder->submit($value)->addClass('btn')->addClass($type);
     }
