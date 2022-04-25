@@ -1,21 +1,20 @@
 # BootForms
 
-[![Build Status](https://travis-ci.org/TypiCMS/bootforms.svg?branch=master)](https://travis-ci.org/TypiCMS/bootforms)
 [![Coverage Status](https://coveralls.io/repos/github/TypiCMS/bootforms/badge.svg?branch=master)](https://coveralls.io/github/TypiCMS/bootforms?branch=master)
 [![StyleCI](https://styleci.io/repos/132662795/shield?branch=master)](https://styleci.io/repos/132662795)
 
 BootForms was originally created by [Adam Wathan](https://github.com/adamwathan). It is build on top of the more general [Form](https://github.com/adamwathan/form) package by adding another layer of abstraction to rapidly generate markup for standard Bootstrap 5 forms. Probably not perfect for your super custom branded ready-for-release apps, but a _huge_ time saver when you are still in the prototyping stage!
 
--   [Installation](#installing-with-composer)
--   [Using BootForms](#using-bootforms)
-    -   [Basic Usage](#basic-usage)
-    -   [Customizing Elements](#customizing-elements)
-    -   [Reduced Boilerplate](#reduced-boilerplate)
-    -   [Input Groups](#input-groups)
-    -   [Automatic Validation State](#automatic-validation-state)
-    -   [Horizontal Forms](#horizontal-forms)
-    -   [Additional Tips](#additional-tips)
--   [Related Resources](#related-resources)
+- [Installation](#installing-with-composer)
+- [Using BootForms](#using-bootforms)
+  - [Basic Usage](#basic-usage)
+  - [Customizing Elements](#customizing-elements)
+  - [Reduced Boilerplate](#reduced-boilerplate)
+  - [Input Groups](#input-groups)
+  - [Automatic Validation State](#automatic-validation-state)
+  - [Horizontal Forms](#horizontal-forms)
+  - [Additional Tips](#additional-tips)
+- [Related Resources](#related-resources)
 
 ## Installing with Composer
 
@@ -132,27 +131,27 @@ Typical Bootstrap form boilerplate might look something like this:
 
 ```html
 <form>
-    <div class="mb-3">
-        <label for="first_name" class="form-label">First Name</label>
-        <input type="text" class="form-control" name="first_name" id="first_name" />
-    </div>
-    <div class="mb-3">
-        <label for="last_name" class="form-label">Last Name</label>
-        <input type="text" class="form-control" name="last_name" id="last_name" />
-    </div>
-    <div class="mb-3">
-        <label for="date_of_birth" class="form-label">Date of Birth</label>
-        <input type="date" class="form-control" name="date_of_birth" id="date_of_birth" />
-    </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control" name="email" id="email" />
-    </div>
-    <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" name="password" id="password" />
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="mb-3">
+    <label for="first_name" class="form-label">First Name</label>
+    <input type="text" class="form-control" name="first_name" id="first_name" />
+  </div>
+  <div class="mb-3">
+    <label for="last_name" class="form-label">Last Name</label>
+    <input type="text" class="form-control" name="last_name" id="last_name" />
+  </div>
+  <div class="mb-3">
+    <label for="date_of_birth" class="form-label">Date of Birth</label>
+    <input type="date" class="form-control" name="date_of_birth" id="date_of_birth" />
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="email" id="email" />
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password" id="password" />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 ```
 
