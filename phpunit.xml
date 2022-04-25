@@ -5,8 +5,8 @@
             <directory suffix=".php">./src</directory>
         </include>
         <exclude>
-            <file>./src/TypiCMS/BootForms/BootFormsServiceProvider.php</file>
-            <file>./src/TypiCMS/BootForms/Facades/BootForm.php</file>
+            <file>./src/BootFormsServiceProvider.php</file>
+            <file>./src/Facades/BootForm.php</file>
         </exclude>
     </coverage>
     <testsuites>
