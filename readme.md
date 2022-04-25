@@ -1,5 +1,6 @@
 # BootForms
 
+[![Actions Status](https://github.com/TypiCMS/bootforms/workflows/run-tests/badge.svg)](https://github.com/TypiCMS/bootforms/actions)
 [![Coverage Status](https://coveralls.io/repos/github/TypiCMS/bootforms/badge.svg?branch=master)](https://coveralls.io/github/TypiCMS/bootforms?branch=master)
 [![StyleCI](https://styleci.io/repos/132662795/shield?branch=master)](https://styleci.io/repos/132662795)
 
