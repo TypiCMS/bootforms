@@ -31,3 +31,6 @@ jobs:
 
       - name: Execute tests
         run: vendor/bin/phpunit
+
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@1.1.3
