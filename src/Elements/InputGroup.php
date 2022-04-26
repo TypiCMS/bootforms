@@ -6,15 +6,9 @@ use TypiCMS\Form\Elements\Text;
 
 class InputGroup extends Text
 {
-    /**
-     * @var array
-     */
-    protected $beforeAddon = [];
+    protected array $beforeAddon = [];
 
-    /**
-     * @var array
-     */
-    protected $afterAddon = [];
+    protected array $afterAddon = [];
 
     public function beforeAddon(string $addon): self
     {
@@ -37,7 +31,7 @@ class InputGroup extends Text
         return $this;
     }
 
-    protected function renderAddons(array $addons, string $class): string
+    protected function renderAddons(array $addons): string
     {
         $html = '';
 
@@ -51,9 +45,9 @@ class InputGroup extends Text
     public function render(): string
     {
         $html = '<div class="input-group">';
-        $html .= $this->renderAddons($this->beforeAddon, 'prepend');
+        $html .= $this->renderAddons($this->beforeAddon);
         $html .= parent::render();
-        $html .= $this->renderAddons($this->afterAddon, 'append');
+        $html .= $this->renderAddons($this->afterAddon);
         $html .= '</div>';
 
         return $html;

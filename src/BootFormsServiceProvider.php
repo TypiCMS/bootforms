@@ -10,9 +10,6 @@ use TypiCMS\Form\OldInput\IlluminateOldInputProvider;
 
 class BootFormsServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    /**
-     * Register the service provider.
-     */
     public function register()
     {
         $this->registerErrorStore();

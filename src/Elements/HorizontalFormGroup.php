@@ -7,10 +7,7 @@ use TypiCMS\Form\Elements\Label;
 
 class HorizontalFormGroup extends FormGroup
 {
-    /**
-     * @var array
-     */
-    protected $controlSizes;
+    protected array $controlSizes;
 
     public function __construct(Label $label, Element $control, array $controlSizes)
     {

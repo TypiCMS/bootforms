@@ -6,10 +6,7 @@ use TypiCMS\Form\Elements\Element;
 
 class FormText extends Element
 {
-    /**
-     * @var string
-     */
-    private $message;
+    private string $message;
 
     public function __construct(string $message)
     {

@@ -7,25 +7,13 @@ use TypiCMS\Form\Elements\Label;
 
 class FormGroup extends Element
 {
-    /**
-     * @var Label
-     */
-    protected $label;
+    protected Label $label;
 
-    /**
-     * @var \TypiCMS\Form\Elements\Element
-     */
-    protected $control;
+    protected Element $control;
 
-    /**
-     * @var ?FormText
-     */
-    protected $formText;
+    protected ?FormText $formText = null;
 
-    /**
-     * @var ?InvalidFeedback
-     */
-    protected $invalidFeedback;
+    protected ?InvalidFeedback $invalidFeedback = null;
 
     public function __construct(Label $label, Element $control)
     {

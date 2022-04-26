@@ -6,20 +6,11 @@ use TypiCMS\Form\Elements\FormOpen;
 
 class BootForm
 {
-    /**
-     * @var BasicFormBuilder
-     */
-    protected $builder;
+    protected BasicFormBuilder $builder;
 
-    /**
-     * @var BasicFormBuilder
-     */
-    protected $basicFormBuilder;
+    protected BasicFormBuilder $basicFormBuilder;
 
-    /**
-     * @var HorizontalFormBuilder
-     */
-    protected $horizontalFormBuilder;
+    protected HorizontalFormBuilder $horizontalFormBuilder;
 
     public function __construct(BasicFormBuilder $basicFormBuilder, HorizontalFormBuilder $horizontalFormBuilder)
     {

@@ -13,10 +13,7 @@ use TypiCMS\Form\FormBuilder;
 
 class BasicFormBuilder
 {
-    /**
-     * @var FormBuilder
-     */
-    protected $builder;
+    protected FormBuilder $builder;
 
     public function __construct(FormBuilder $builder)
     {

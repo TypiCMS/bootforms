@@ -4,15 +4,9 @@ namespace TypiCMS\BootForms\Elements;
 
 class OffsetFormGroup
 {
-    /**
-     * @var mixed
-     */
-    protected $control;
+    protected mixed $control;
 
-    /**
-     * @var array
-     */
-    protected $columnSizes;
+    protected array $columnSizes;
 
     public function __construct(mixed $control, array $columnSizes)
     {

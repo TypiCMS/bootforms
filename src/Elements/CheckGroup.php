@@ -7,14 +7,9 @@ use TypiCMS\Form\Elements\Label;
 
 class CheckGroup extends FormGroup
 {
-    protected $label;
+    protected Label $label;
 
-    /**
-     * BootForm implementation.
-     *
-     * @var \TypiCMS\Form\Elements\Element
-     */
-    protected $control;
+    protected Element $control;
 
     public function __construct(Label $label, Element $control)
     {

@@ -2,17 +2,13 @@
 
 namespace TypiCMS\BootForms\Elements;
 
+use TypiCMS\Form\Elements\Element;
+
 class GroupWrapper
 {
-    /**
-     * @var FormGroup
-     */
-    protected $formGroup;
+    protected FormGroup $formGroup;
 
-    /**
-     * @var \TypiCMS\Form\Elements\Element
-     */
-    protected $target;
+    protected Element $target;
 
     public function __construct(FormGroup $formGroup)
     {
