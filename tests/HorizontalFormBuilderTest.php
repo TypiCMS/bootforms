@@ -9,6 +9,7 @@ use TypiCMS\Form\FormBuilder;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class HorizontalFormBuilderTest extends TestCase

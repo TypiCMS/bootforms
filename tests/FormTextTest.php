@@ -7,6 +7,7 @@ use TypiCMS\BootForms\Elements\FormText;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class FormTextTest extends TestCase

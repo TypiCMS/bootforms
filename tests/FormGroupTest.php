@@ -8,6 +8,7 @@ use TypiCMS\Form\FormBuilder;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class FormGroupTest extends TestCase

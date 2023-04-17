@@ -7,6 +7,7 @@ use TypiCMS\BootForms\Elements\InvalidFeedback;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class InvalidFeedbackTest extends TestCase

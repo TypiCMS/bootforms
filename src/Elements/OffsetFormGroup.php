@@ -17,7 +17,7 @@ class OffsetFormGroup
     public function render(): string
     {
         $html = '<div class="mb-3 row">';
-        $html .= '<div class="'.$this->getControlClass().'">';
+        $html .= '<div class="' . $this->getControlClass() . '">';
         $html .= $this->control;
         $html .= '</div>';
 

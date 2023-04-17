@@ -2,6 +2,7 @@
 
 namespace TypiCMS\BootForms\Tests;
 
+use DateTime;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use stdClass;
@@ -10,6 +11,7 @@ use TypiCMS\Form\FormBuilder;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class BasicFormBuilderTest extends TestCase
@@ -764,7 +766,7 @@ class BasicFormBuilderTest extends TestCase
         $obj->email = 'johndoe@example.com';
         $obj->first_name = 'John';
         $obj->last_name = 'Doe';
-        $obj->date_of_birth = new \DateTime('1985-05-06');
+        $obj->date_of_birth = new DateTime('1985-05-06');
         $obj->gender = 'male';
         $obj->terms = 'agree';
 

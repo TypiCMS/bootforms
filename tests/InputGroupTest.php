@@ -7,6 +7,7 @@ use TypiCMS\BootForms\Elements\InputGroup;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class InputGroupTest extends TestCase
