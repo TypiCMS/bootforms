@@ -38,7 +38,10 @@
         "laravel": {
             "providers": [
                 "TypiCMS\\BootForms\\BootFormsServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "BootForm": "TypiCMS\\BootForms\\Facades\\BootForm"
+            }
         }
     }
 }
