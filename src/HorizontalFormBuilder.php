@@ -109,7 +109,7 @@ class HorizontalFormBuilder extends BasicFormBuilder
         return $checkGroup;
     }
 
-    public function radio(string $label, string $name, int|string $value = null): OffsetFormGroup
+    public function radio(string $label, string $name, int|string|null $value = null): OffsetFormGroup
     {
         if (is_null($value)) {
             $value = $label;
